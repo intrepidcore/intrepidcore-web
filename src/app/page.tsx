@@ -182,26 +182,26 @@ export default function Home() {
             {[
               {
                 img: "/visuel/terrain-vierge.jpg",
-                tag: "/ PERFORMANCE",
+                tag: "/ ARCHITECTURE",
                 tagColor: "text-cyan",
-                title: "Échelle Computationnelle",
-                text: "Le dimensionnement manuel est un vecteur de biais. Nos architectures déploient une puissance de calcul massive pour traiter des variables environnementales et structurelles sans précédent.",
+                title: "Solveur Double",
+                text: "Un noyau déterministe (Hardy-Cross, Eurocode 2) couplé à un moteur stochastique par ensembles Monte Carlo, réduits par sélection de Wasserstein et arbitrés par NSGA-II. Chaque résultat probabiliste reste retraçable à un calcul déterministe de référence.",
                 border: "",
               },
               {
                 img: "/visuel/equipe-mission.jpg",
-                tag: "/ PRÉCISION",
+                tag: "/ TRAÇABILITÉ",
                 tagColor: "text-atlas",
-                title: "Tolérance Zéro",
-                text: "L'interface n'est pas un outil de visualisation, mais un centre de commandement prédictif. Les points de rupture sont identifiés et neutralisés avant le déploiement physique.",
+                title: "Dossier Vérifiable",
+                text: "Chaque calcul conserve ses formules, ses normes appliquées et ses hypothèses d'entrée. Le format Fascicule 71 restitue les résultats stochastiques en langage normatif déterministe, lisible par les organismes de contrôle.",
                 border: "md:border-l md:border-[#1a1a1a]",
               },
               {
                 img: "/visuel/ingenieur-terrain.jpg",
-                tag: "/ IMPACT",
+                tag: "/ DONNÉES",
                 tagColor: "text-ignis",
-                title: "Optimisation Fiscale & Matérielle",
-                text: "La modélisation par intelligence artificielle prédictive élimine la nécessité des tests destructifs, sécurisant l'allocation des budgets et la viabilité des infrastructures critiques.",
+                title: "Ancrage Terrain",
+                text: "573 sondages géoréférencés et 29 407 mailles prédictives remplacent les hypothèses génériques par des paramètres géotechniques mesurés en Afrique de l'Ouest. Les essais normatifs restent requis pour la validation finale des ouvrages.",
                 border: "md:border-l md:border-[#1a1a1a]",
               },
             ].map((d, i) => (
@@ -273,7 +273,7 @@ export default function Home() {
               { title: "Plateformes", color: "text-cyan", links: [{ l: "LCPI v0.1", h: "/produits/lcpi" }, { l: "Atlas v0.2", h: "/produits/atlas" }, { l: "IgnisCore v0.3", h: "/produits/igniscore" }] },
               { title: "Secteurs", color: "text-atlas", links: [{ l: "Génie Hydraulique", h: "#" }, { l: "Géotechnique", h: "#" }, { l: "Valorisation Biomasse", h: "#" }, { l: "Réseaux Incendie", h: "#" }, { l: "Fondations", h: "#" }] },
               { title: "Technologies", color: "text-ignis", links: [{ l: "Modélisation FEA", h: "#" }, { l: "Réseaux PINN", h: "#" }, { l: "Krigeage KED/RK", h: "#" }, { l: "Moteur BioCore", h: "#" }, { l: "HMAC-SHA256", h: "#" }] },
-              { title: "Standards", color: "text-[#555]", links: [{ l: "BAEL 91", h: "#" }, { l: "Eurocodes", h: "#" }, { l: "EPS-001", h: "#" }, { l: "Conformité Sismique", h: "#" }, { l: "Standard ICES", h: "/#standards" }] },
+              { title: "Standards", color: "text-[#555]", links: [{ l: "BAEL 91", h: "#" }, { l: "Eurocodes", h: "#" }, { l: "EPS-001", h: "#" }, { l: "Conformité Sismique", h: "#" }, { l: "Standard ICES", h: "/produits/ices" }] },
               { title: "Ressources", color: "text-[#555]", links: [{ l: "Documentation", h: "#" }, { l: "Paper Atlas", h: "#" }, { l: "À propos", h: "#" }, { l: "Contact", h: "/#demo" }, { l: "Mentions légales", h: "#" }] },
             ].map((col) => (
               <div key={col.title}>
