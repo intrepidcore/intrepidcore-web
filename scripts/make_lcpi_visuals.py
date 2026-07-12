@@ -262,6 +262,40 @@ plt.savefig(f"{OUT}/lcpi_pareto_nsga2.png", dpi=200, transparent=True, bbox_inch
 plt.close()
 print("6/7 pareto ok")
 
+# ------------------------------------------------------------
+# 6bis) Même graphique, variante claire (encre sombre sur transparent)
+# ------------------------------------------------------------
+INK_L, DIM_L, DARK = "#1A1A1A", "#8A8A8A", "#0A0A0A"
+np.random.seed(3)
+fig, ax = plt.subplots(figsize=(7.6, 5.4), dpi=200)
+
+cost_dom = np.random.uniform(20, 100, n_dom)
+rel_dom = np.clip(60 + 0.30 * cost_dom + np.random.normal(0, 6, n_dom) - np.random.uniform(4, 22, n_dom), 55, 97)
+ax.scatter(cost_dom, rel_dom, s=10, color=DIM_L, alpha=0.45, linewidths=0, zorder=2)
+
+cost_pf = np.sort(np.random.uniform(22, 98, 14))
+rel_pf = 60 + 34 * (1 - np.exp(-(cost_pf - 20) / 35))
+rel_pf = np.maximum.accumulate(np.clip(rel_pf + np.random.normal(0, 0.8, len(cost_pf)), 60, 99))
+ax.plot(cost_pf, rel_pf, color=CYAN, linewidth=1.3, zorder=3)
+ax.scatter(cost_pf, rel_pf, s=32, color="white", edgecolor=CYAN, linewidths=1.4, zorder=4)
+
+ax.scatter([cost_pf[pick]], [rel_pf[pick]], s=90, facecolor="none", edgecolor=DARK, linewidths=1.4, zorder=5)
+annotate(ax, cost_pf[pick] + 3, rel_pf[pick] - 3, "solution retenue", size=8.5, color=DARK)
+annotate(ax, 78, 62, "configurations dominées", size=8.5, color=DIM_L)
+annotate(ax, 30, 95, "front de Pareto\n(NSGA-II)", size=8.5, color=CYAN)
+
+ax.set_xlim(15, 105); ax.set_ylim(50, 100)
+ax.set_xticks([]); ax.set_yticks([])
+ax.spines[["top", "right"]].set_visible(False)
+ax.spines["left"].set_color(DIM_L); ax.spines["bottom"].set_color(DIM_L)
+ax.set_xlabel("Coût réseau (matériaux + pose)", fontfamily="DejaVu Sans Mono", fontsize=8.5, color=DIM_L)
+ax.set_ylabel("Fiabilité hydraulique (%)", fontfamily="DejaVu Sans Mono", fontsize=8.5, color=DIM_L)
+
+plt.tight_layout()
+plt.savefig(f"{OUT}/lcpi_pareto_nsga2_light.png", dpi=200, transparent=True, bbox_inches="tight", pad_inches=0.15)
+plt.close()
+print("6bis/7 pareto (clair) ok")
+
 # ============================================================
 # 7) COUPE TECHNIQUE EC2 — section béton armé (poteau 30x30, As=8.04cm²)
 # ============================================================

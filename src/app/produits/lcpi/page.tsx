@@ -262,14 +262,14 @@ export default function LCPIPage() {
             </FadeIn>
           </div>
           <FadeIn delay={0.12}>
-            <div className="border border-white/10 p-6">
+            <div className="border border-[#e5e5e5] bg-white p-6">
               <Image
-                src="/illustrations/lcpi/lcpi_pareto_nsga2.png"
+                src="/illustrations/lcpi/lcpi_pareto_nsga2_light.png"
                 alt="Front de Pareto NSGA-II, coût réseau contre fiabilité hydraulique, configurations dominées en gris"
                 width={1520} height={1080} className="w-full h-auto mb-5 max-w-2xl mx-auto"
               />
               <p className="font-mono text-[9px] tracking-[0.25em] text-cyan uppercase mb-2">Module 01 · Optimisation NSGA-II</p>
-              <p className="text-sm text-white/40 leading-relaxed max-w-xl">L&apos;optimiseur explore l&apos;espace des configurations réseau et retient le front non dominé — coût et fiabilité, jamais l&apos;un sans l&apos;autre. La ligne du tableau comparatif ci-dessous en découle directement.</p>
+              <p className="text-sm text-[#555] leading-relaxed max-w-xl">L&apos;optimiseur explore l&apos;espace des configurations réseau et retient le front non dominé — coût et fiabilité, jamais l&apos;un sans l&apos;autre. La ligne du tableau comparatif ci-dessous en découle directement.</p>
             </div>
           </FadeIn>
         </div>
