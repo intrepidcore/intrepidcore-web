@@ -110,12 +110,12 @@ export default function LCPIPage() {
         style={{ scrollSnapAlign: "start" }}
       >
         {/* Chaos -> Ordre — toile de fond du Dossier Double */}
-        <div className="absolute inset-0 opacity-[0.28]" style={{
+        <div className="absolute inset-0 opacity-[0.42]" style={{
           backgroundImage: "url(/illustrations/lcpi/lcpi_abstract_chaos_ordre.jpg)",
           backgroundSize: "cover",
           backgroundPosition: "center 40%",
         }} />
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-black/80" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-black/55" />
 
         {/* Blueprint grid */}
         <div className="absolute inset-0 opacity-[0.025]" style={{
@@ -186,12 +186,12 @@ export default function LCPIPage() {
 
       {/* ── SOLVEUR DOUBLE — SCHÉMA D'ARCHITECTURE — BLACK ── */}
       <section className="relative py-28 md:py-36 px-8 md:px-16 bg-black border-t border-white/5 overflow-hidden">
-        <div className="absolute inset-0 opacity-[0.16]" style={{
+        <div className="absolute inset-0 opacity-[0.32]" style={{
           backgroundImage: "url(/illustrations/lcpi/lcpi_abstract_stochastique_02.jpg)",
           backgroundSize: "cover",
           backgroundPosition: "center",
         }} />
-        <div className="absolute inset-0 bg-black/50" />
+        <div className="absolute inset-0 bg-black/30" />
         <div className="relative max-w-[1280px] mx-auto">
           <FadeIn>
             <p className="font-mono text-[9px] tracking-[0.35em] text-white/30 uppercase mb-4">/ Architecture du Solveur</p>
@@ -215,12 +215,12 @@ export default function LCPIPage() {
 
       {/* ── PREUVES DE CALCUL — BLACK ── */}
       <section className="relative py-28 md:py-36 px-8 md:px-16 bg-black border-t border-white/5 overflow-hidden">
-        <div className="absolute inset-0 opacity-[0.14]" style={{
+        <div className="absolute inset-0 opacity-[0.30]" style={{
           backgroundImage: "url(/illustrations/lcpi/lcpi_abstract_stochastique_01.jpg)",
           backgroundSize: "cover",
           backgroundPosition: "center",
         }} />
-        <div className="absolute inset-0 bg-black/55" />
+        <div className="absolute inset-0 bg-black/35" />
         <div className="relative max-w-[1280px] mx-auto">
           <FadeIn>
             <p className="font-mono text-[9px] tracking-[0.35em] text-white/30 uppercase mb-4">/ Preuves de Calcul</p>
@@ -442,12 +442,12 @@ export default function LCPIPage() {
 
       {/* ── STANDARD ICES — BLACK ── */}
       <section className="relative py-28 md:py-36 px-8 md:px-16 bg-black border-t border-white/5 overflow-hidden">
-        <div className="absolute inset-0 opacity-[0.18]" style={{
+        <div className="absolute inset-0 opacity-[0.36]" style={{
           backgroundImage: "url(/illustrations/lcpi/lcpi_abstract_scellement.jpg)",
           backgroundSize: "cover",
           backgroundPosition: "center 30%",
         }} />
-        <div className="absolute inset-0 bg-black/55" />
+        <div className="absolute inset-0 bg-black/35" />
         <div className="relative max-w-[1280px] mx-auto">
           <FadeIn>
             <p className="font-mono text-[9px] tracking-[0.35em] text-white/30 uppercase mb-4">/ Standard ICES</p>
@@ -541,12 +541,12 @@ export default function LCPIPage() {
 
       {/* ── CTA — WHITE ── */}
       <section id="demo" className="relative py-40 px-8 md:px-16 bg-white border-t border-[#e5e5e5] text-center overflow-hidden">
-        <div className="absolute inset-0 opacity-[0.20]" style={{
+        <div className="absolute inset-0 opacity-[0.34]" style={{
           backgroundImage: "url(/illustrations/lcpi/lcpi_abstract_deterministe_01.jpg)",
           backgroundSize: "cover",
           backgroundPosition: "center",
         }} />
-        <div className="absolute inset-0 bg-white/70" />
+        <div className="absolute inset-0 bg-white/50" />
         <div className="relative max-w-[1280px] mx-auto">
           <FadeIn>
             <p className="font-mono text-[9px] tracking-[0.4em] text-[#999] uppercase mb-6">/ Démarrer avec LCPI</p>
