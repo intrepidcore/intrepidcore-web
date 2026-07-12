@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef } from "react";
+import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { ModulesStickyList } from "@/components/ui/ModulesStickyList";
@@ -118,7 +119,7 @@ export default function LCPIPage() {
           {/* Badge */}
           <motion.div style={{ opacity: subtitleOpacity, y: subtitleY }}>
             <div className="flex items-center gap-4 mb-8">
-              <span className="font-mono text-[9px] tracking-[0.35em] text-cyan uppercase border border-cyan/30 px-3 py-1.5">v2.4.1 · Production</span>
+              <span className="font-mono text-[9px] tracking-[0.35em] text-cyan uppercase border border-cyan/30 px-3 py-1.5">Solveur Double · 3 modules en production</span>
               <span className="font-mono text-[9px] tracking-[0.35em] text-white/30 uppercase">/ Plateformes</span>
             </div>
           </motion.div>
@@ -136,7 +137,7 @@ export default function LCPIPage() {
             <div className="flex flex-col md:flex-row md:items-end md:justify-between border-t border-white/10 pt-8 mt-4 gap-8">
               <div className="max-w-xl">
                 <p className="text-xl text-white/50 leading-relaxed mb-2">La Calculatrice de l&apos;Ingénieur Civil</p>
-                <p className="font-mono text-[10px] tracking-[0.2em] text-white/25 uppercase">15+ modules · 5 domaines · 10-50× moins cher · 100% auditable</p>
+                <p className="font-mono text-[10px] tracking-[0.2em] text-white/25 uppercase">6 modules · 3 en production · 10-50× moins cher · 100% auditable</p>
               </div>
               <div className="flex gap-4 flex-wrap">
                 <a href="#demo" className="bg-cyan text-black px-8 py-3.5 font-mono text-[10px] tracking-[0.25em] uppercase hover:bg-cyan/90 transition-colors">Demander une démo</a>
@@ -161,8 +162,8 @@ export default function LCPIPage() {
       <section className="py-20 px-8 md:px-16 bg-white border-t border-[#e5e5e5]">
         <div className="max-w-[1280px] mx-auto grid grid-cols-2 md:grid-cols-4">
           {[
-            { val: "15+", label: "Modules de calcul", tag: "/ COUVERTURE" },
-            { val: "5", label: "Domaines d'ingénierie", tag: "/ DOMAINES" },
+            { val: "6", label: "Modules de calcul (3 en production)", tag: "/ COUVERTURE" },
+            { val: "3", label: "Domaines d'ingénierie actifs", tag: "/ DOMAINES" },
             { val: "10-50×", label: "Moins cher que l'alternative", tag: "/ ÉCONOMIE" },
             { val: "100%", label: "Auditable Ed25519", tag: "/ STANDARD ICES" },
           ].map((s, i) => (
@@ -175,8 +176,84 @@ export default function LCPIPage() {
         </div>
       </section>
 
+      {/* ── SOLVEUR DOUBLE — SCHÉMA D'ARCHITECTURE — BLACK ── */}
+      <section className="py-28 md:py-36 px-8 md:px-16 bg-black border-t border-white/5">
+        <div className="max-w-[1280px] mx-auto">
+          <FadeIn>
+            <p className="font-mono text-[9px] tracking-[0.35em] text-white/30 uppercase mb-4">/ Architecture du Solveur</p>
+            <h2 className="text-4xl md:text-5xl font-medium tracking-tight mb-4">Un noyau, deux logiques.<br /><span className="text-white/25">Jamais l&apos;une sans l&apos;autre.</span></h2>
+            <p className="text-base text-white/40 max-w-xl mb-14 leading-relaxed">Le noyau déterministe (Hardy-Cross, Eurocode 2) vérifie ce que le moteur stochastique explore. Aucun résultat ne sort du solveur sans passer par cette double lecture.</p>
+          </FadeIn>
+          <FadeIn delay={0.1}>
+            <Image
+              src="/illustrations/lcpi/lcpi_architecture_solveur_double.png"
+              alt="Architecture du solveur double LCPI : entrées réseau et scénarios, noyau déterministe et moteur stochastique, sorties signées"
+              width={1532}
+              height={1045}
+              className="w-full h-auto"
+            />
+          </FadeIn>
+        </div>
+      </section>
+
       {/* ── MODULES — STICKY ASYMÉTRIQUE — WHITE ── */}
       <ModulesStickyList />
+
+      {/* ── PREUVES DE CALCUL — BLACK ── */}
+      <section className="py-28 md:py-36 px-8 md:px-16 bg-black border-t border-white/5">
+        <div className="max-w-[1280px] mx-auto">
+          <FadeIn>
+            <p className="font-mono text-[9px] tracking-[0.35em] text-white/30 uppercase mb-4">/ Preuves de Calcul</p>
+            <h2 className="text-4xl md:text-5xl font-medium tracking-tight mb-8">Le mécanisme, pas la promesse.</h2>
+          </FadeIn>
+          <FadeIn delay={0.04}>
+            <div className="border border-white/10 p-6 mb-10">
+              <Image
+                src="/illustrations/lcpi/lcpi_workflow_dossier_double.png"
+                alt="Chaîne Dossier Double : solveur stochastique, fractile P95, traduction Fascicule 71, PDF signé Ed25519"
+                width={1473} height={448} className="w-full h-auto mb-5"
+              />
+              <p className="font-mono text-[9px] tracking-[0.25em] text-cyan uppercase mb-2">Dossier Double</p>
+              <p className="text-sm text-white/40 leading-relaxed max-w-2xl">Le résultat stochastique n&apos;est jamais livré tel quel : il est ramené à un fractile conservateur, traduit en langage normatif Fascicule 71, puis signé. Les trois preuves ci-dessous documentent chaque maillon.</p>
+            </div>
+          </FadeIn>
+          <div className="grid md:grid-cols-2 gap-10 mb-10">
+            <FadeIn delay={0.06}>
+              <div className="border border-white/10 p-6">
+                <Image
+                  src="/illustrations/lcpi/lcpi_fractiles_p10_p50_p90.png"
+                  alt="Bande de fractiles P10/P50/P90 de la pression au nœud critique sur 24h, mécanisme Dossier Double"
+                  width={1703} height={919} className="w-full h-auto mb-5"
+                />
+                <p className="font-mono text-[9px] tracking-[0.25em] text-cyan uppercase mb-2">Module 01 · AEP</p>
+                <p className="text-sm text-white/40 leading-relaxed">Chaque scénario Monte Carlo produit une bande d&apos;incertitude, pas une valeur unique. Le P95 conservateur est ce qui alimente le rapport Fascicule 71.</p>
+              </div>
+            </FadeIn>
+            <FadeIn delay={0.1}>
+              <div className="border border-white/10 p-6">
+                <Image
+                  src="/illustrations/lcpi/lcpi_convergence_hardy_cross.png"
+                  alt="Convergence du résidu de pression Hardy-Cross sur 8 itérations, échelle logarithmique"
+                  width={1491} height={920} className="w-full h-auto mb-5"
+                />
+                <p className="font-mono text-[9px] tracking-[0.25em] text-cyan uppercase mb-2">Module 01 · Noyau déterministe</p>
+                <p className="text-sm text-white/40 leading-relaxed">Hardy-Cross converge sous la tolérance en 8 itérations. C&apos;est ce noyau, bit-exact, qui vérifie chaque sortie du moteur stochastique.</p>
+              </div>
+            </FadeIn>
+          </div>
+          <FadeIn delay={0.12}>
+            <div className="border border-white/10 p-6">
+              <Image
+                src="/illustrations/lcpi/lcpi_pareto_nsga2.png"
+                alt="Front de Pareto NSGA-II, coût réseau contre fiabilité hydraulique, configurations dominées en gris"
+                width={1520} height={1080} className="w-full h-auto mb-5 max-w-2xl mx-auto"
+              />
+              <p className="font-mono text-[9px] tracking-[0.25em] text-cyan uppercase mb-2">Module 01 · Optimisation NSGA-II</p>
+              <p className="text-sm text-white/40 leading-relaxed max-w-xl">L&apos;optimiseur explore l&apos;espace des configurations réseau et retient le front non dominé — coût et fiabilité, jamais l&apos;un sans l&apos;autre. La ligne du tableau comparatif ci-dessous en découle directement.</p>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
 
       {/* ── COMPARAISON — WHITE ── */}
       <section className="py-28 md:py-36 px-8 md:px-16 bg-white border-t border-[#e5e5e5]">
@@ -278,21 +355,30 @@ export default function LCPIPage() {
                     </div>
                     <p className="text-sm text-white/35 leading-relaxed mb-6">{t.desc}</p>
                     {i === 0 && (
-                      <div className="bg-black border border-white/10 p-5 font-mono text-[10px]">
-                        <div className="flex items-center gap-2 mb-4 pb-3 border-b border-white/10">
-                          <div className="w-2 h-2 rounded-full bg-white/10" />
-                          <div className="w-2 h-2 rounded-full bg-white/10" />
-                          <div className="w-2 h-2 rounded-full bg-cyan/60" />
-                          <span className="ml-2 text-white/25 text-[9px] tracking-wider">lcpi — terminal</span>
+                      <div className="grid sm:grid-cols-2 gap-5 items-start">
+                        <div className="bg-black border border-white/10 p-5 font-mono text-[10px]">
+                          <div className="flex items-center gap-2 mb-4 pb-3 border-b border-white/10">
+                            <div className="w-2 h-2 rounded-full bg-white/10" />
+                            <div className="w-2 h-2 rounded-full bg-white/10" />
+                            <div className="w-2 h-2 rounded-full bg-cyan/60" />
+                            <span className="ml-2 text-white/25 text-[9px] tracking-wider">lcpi — terminal</span>
+                          </div>
+                          <div className="space-y-1.5 leading-relaxed">
+                            <p><span className="text-white/30">$</span> <span className="text-cyan">lcpi</span> <span className="text-white">beton run</span> <span className="text-white/30">--section poteau-rectangulaire --norme bael91</span></p>
+                            <p className="mt-2 text-white/10">────────────────────────────</p>
+                            <p><span className="text-cyan">✓</span> <span className="text-white">Poteau 30×30cm</span> <span className="text-white/30">· fc28=25MPa · Fe500</span></p>
+                            <p><span className="text-cyan">✓</span> <span className="text-white">Nu=420kN · Mu=18kN.m</span></p>
+                            <p><span className="text-cyan">✓</span> <span className="text-white">As=8.04cm²</span> <span className="text-white/30">→ 4HA16 + 4HA14</span></p>
+                            <p><span className="text-cyan">✓</span> <span className="text-white">Note signée</span> <span className="text-white/30">Ed25519 → note_calcul_20260620.pdf</span></p>
+                            <p className="mt-2 text-white/20">Durée totale : <span className="text-white">2.8s</span></p>
+                          </div>
                         </div>
-                        <div className="space-y-1.5 leading-relaxed">
-                          <p><span className="text-white/30">$</span> <span className="text-cyan">lcpi</span> <span className="text-white">beton run</span> <span className="text-white/30">--section poteau-rectangulaire --norme bael91</span></p>
-                          <p className="mt-2 text-white/10">────────────────────────────</p>
-                          <p><span className="text-cyan">✓</span> <span className="text-white">Poteau 30×30cm</span> <span className="text-white/30">· fc28=25MPa · Fe500</span></p>
-                          <p><span className="text-cyan">✓</span> <span className="text-white">Nu=420kN · Mu=18kN.m</span></p>
-                          <p><span className="text-cyan">✓</span> <span className="text-white">As=8.04cm²</span> <span className="text-white/30">→ 4HA16 + 4HA14</span></p>
-                          <p><span className="text-cyan">✓</span> <span className="text-white">Note signée</span> <span className="text-white/30">Ed25519 → note_calcul_20260620.pdf</span></p>
-                          <p className="mt-2 text-white/20">Durée totale : <span className="text-white">2.8s</span></p>
+                        <div className="border border-white/10 p-3 bg-black">
+                          <Image
+                            src="/illustrations/lcpi/lcpi_coupe_ec2_beton_arme.png"
+                            alt="Coupe technique du poteau 30×30 armé, 4HA16 et 4HA14, cadres HA8/20cm, EC2 ELU/ELS"
+                            width={1047} height={1034} className="w-full h-auto"
+                          />
                         </div>
                       </div>
                     )}

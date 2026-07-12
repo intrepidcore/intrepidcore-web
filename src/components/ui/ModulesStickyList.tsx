@@ -79,15 +79,13 @@ const MODULES = [
       { k: "Profilés", v: "HEA · IPE · HEB" },
       { k: "Vérifs", v: "Flambement · Déversement" },
     ],
-    statusTag: "/// BÉTA",
-    statusColor: "text-white/35 border-white/15",
+    statusTag: "/// ROADMAP",
+    statusColor: "text-white/20 border-white/8",
     code: [
       "$ lcpi metal run --section IPE300 --portee 8m",
       "",
-      "✓ My,Ed = 96 kN.m · My,Rd = 109 kN.m  ✓",
-      "✓ λ̄_LT = 0.62 · χ_LT = 0.81",
-      "✓ Flambement Y β=0.88  ✓",
-      "/// STATUS: BÉTA — Rapport en revue",
+      "/// Non implémenté à ce jour",
+      "/// Noyau EC3 (flambement, déversement) : non démarré",
     ],
   },
   {
@@ -100,15 +98,13 @@ const MODULES = [
       { k: "Matériaux", v: "GL28h · Massif · CLT" },
       { k: "Assemblages", v: "Boulons · Pointes · Épingles" },
     ],
-    statusTag: "/// BÉTA",
-    statusColor: "text-white/35 border-white/15",
+    statusTag: "/// ROADMAP",
+    statusColor: "text-white/20 border-white/8",
     code: [
       "$ lcpi bois run --section 200x400 --essence GL28h",
       "",
-      "✓ σ_m,d = 18.2 N/mm² · fm,d = 19.6  ✓",
-      "✓ Flèche = L/310 · Limite = L/300  ✓",
-      "✓ 200×400 mm GL28h validé EC5",
-      "/// STATUS: BÉTA — Connexions en cours",
+      "/// Non implémenté à ce jour",
+      "/// Noyau EC5 (flexion, assemblages) : non démarré",
     ],
   },
   {
@@ -126,10 +122,8 @@ const MODULES = [
     code: [
       "$ lcpi fem run --model portique-3d --nonlinear",
       "",
-      "/// En développement — disponible v3.0",
-      "",
-      "✓ σ_max = 142 MPa · 12k nœuds",
-      "✓ PINN · 500 epochs · err < 1.2%",
+      "/// Non implémenté à ce jour",
+      "/// Couplage PINN : recherche préliminaire",
     ],
   },
 ];
@@ -259,7 +253,7 @@ function ModuleRow({
           />
         </div>
         <span className="font-mono text-[8px] text-[#3f3f46] tracking-[0.2em] uppercase">
-          {mod.statusTag.startsWith("[") ? "MATURITÉ: PROD" : mod.statusTag.startsWith("/// BÉTA") ? "MATURITÉ: BÉTA" : "MATURITÉ: R&D"}
+          {mod.statusTag.startsWith("[") ? "MATURITÉ: PROD" : "MATURITÉ: ROADMAP"}
         </span>
       </div>
 
@@ -289,7 +283,7 @@ export function ModulesStickyList() {
       {/* Top bar */}
       <div className="px-8 md:px-16 py-4 border-b border-[#1a1a1a] flex items-center justify-between">
         <p className="font-mono text-[9px] tracking-[0.45em] text-[#3f3f46] uppercase">
-          / 15 Moteurs d&apos;Intégration Physique
+          / 6 Moteurs d&apos;Intégration Physique
         </p>
         <motion.p
           key={activeModule}
@@ -297,7 +291,7 @@ export function ModulesStickyList() {
           animate={{ opacity: 1 }}
           className="font-mono text-[9px] tracking-[0.3em] text-[#3f3f46] uppercase"
         >
-          MODULE {activeModule} / 06 ACTIFS
+          MODULE {activeModule} / 06 · 03 EN PRODUCTION
         </motion.p>
       </div>
 
@@ -311,7 +305,7 @@ export function ModulesStickyList() {
               className="font-medium tracking-tighter leading-none text-[#f3f4f6] select-none"
               style={{ fontSize: "clamp(130px, 17vw, 230px)", lineHeight: 0.82 }}
             >
-              15
+              6
             </div>
             <p
               className="font-medium tracking-tighter text-[#27272A] uppercase leading-tight select-none mt-3"
@@ -365,7 +359,7 @@ export function ModulesStickyList() {
           {/* Trailing note */}
           <div className="py-20 border-t border-[#1a1a1a]">
             <p className="font-mono text-[9px] text-[#27272A] tracking-[0.35em] uppercase">
-              + 9 modules en développement — v3.0 · 2027
+              3 modules en production · 3 en feuille de route
             </p>
           </div>
         </div>
