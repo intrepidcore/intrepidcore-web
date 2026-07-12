@@ -200,10 +200,10 @@ export default function LCPIPage() {
           <FadeIn delay={0.1}>
             <Image
               src="/illustrations/lcpi/lcpi_architecture_solveur_double.png"
-              alt="Architecture du solveur double LCPI : entrées réseau et scénarios, noyau déterministe et moteur stochastique, sorties signées"
-              width={1532}
-              height={1045}
-              className="w-full h-auto"
+              alt="Architecture du solveur double LCPI, plateformes isométriques : entrées réseau et scénarios, noyau déterministe et moteur stochastique, sorties signées"
+              width={1563}
+              height={2256}
+              className="w-full h-auto max-w-xl mx-auto"
             />
           </FadeIn>
         </div>
@@ -229,8 +229,8 @@ export default function LCPIPage() {
             <div className="border border-white/10 p-6 mb-10">
               <Image
                 src="/illustrations/lcpi/lcpi_workflow_dossier_double.png"
-                alt="Chaîne Dossier Double : solveur stochastique, fractile P95, traduction Fascicule 71, PDF signé Ed25519"
-                width={1473} height={448} className="w-full h-auto mb-5"
+                alt="Chaîne Dossier Double, plateformes isométriques en séquence : solveur stochastique, fractile P95, traduction Fascicule 71, PDF signé Ed25519"
+                width={1939} height={870} className="w-full h-auto mb-5"
               />
               <p className="font-mono text-[9px] tracking-[0.25em] text-cyan uppercase mb-2">Dossier Double</p>
               <p className="text-sm text-white/40 leading-relaxed max-w-2xl">Le résultat stochastique n&apos;est jamais livré tel quel : il est ramené à un fractile conservateur, traduit en langage normatif Fascicule 71, puis signé. Les trois preuves ci-dessous documentent chaque maillon.</p>

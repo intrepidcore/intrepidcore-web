@@ -51,7 +51,7 @@ def add_glow(path, blur_radius=14, glow_alpha=0.55, glow_scale=1.0):
     out.save(path)
     print("depth added:", path.split("/")[-1])
 
-for f in FILES:
-    add_glow(f"{DIR}/{f}")
-
-print("ok")
+if __name__ == "__main__":
+    for f in FILES:
+        add_glow(f"{DIR}/{f}")
+    print("ok")
