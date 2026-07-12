@@ -59,22 +59,22 @@ const comparison = [
 const pricingTiers = [
   {
     name: "Free", price: "0 $", period: "", desc: "Pour découvrir",
-    features: ["3 modules (AEP, Béton, Hydro)", "5 projets / mois", "PDF basique", "CLI uniquement"],
+    features: ["3 modules (AEP, Béton, Hydro)", "5 projets / mois", "CLI uniquement"],
     cta: "Télécharger CLI", accent: "border-[#e5e5e5]", ctaStyle: "border border-black/20 hover:border-black text-black",
   },
   {
     name: "Standard", price: "29 $", period: "/ mois", desc: "Bureaux d'études",
-    features: ["Tous les modules (15+)", "Projets illimités", "PDF/DOCX/XLSX", "CLI + Desktop GUI", "Support email"],
+    features: ["6 modules (tous)", "Projets illimités", "PDF/DOCX/XLSX"],
     cta: "Commencer", accent: "border-cyan", ctaStyle: "bg-cyan text-black hover:bg-cyan/90",
   },
   {
     name: "Pro", price: "79 $", period: "/ mois", desc: "Cabinets & API",
-    features: ["Standard + API REST", "Intégration Atlas & IgnisCore", "White-label PDF", "5 utilisateurs", "Support prioritaire"],
+    features: ["Intégration Atlas & IgnisCore", "White-label PDF", "API REST (dès v2.5)"],
     cta: "Demander une démo", accent: "border-[#e5e5e5]", ctaStyle: "border border-black/20 hover:border-black text-black",
   },
   {
     name: "Enterprise", price: "Sur devis", period: "", desc: "On-premise & institutions",
-    features: ["On-premise deployment", "Active Directory SSO", "SLA garanti", "Formation équipe", "Support dédié 24/7"],
+    features: ["On-premise deployment", "Formation équipe", "Sur mesure"],
     cta: "Nous contacter", accent: "border-[#e5e5e5]", ctaStyle: "border border-black/20 hover:border-black text-black",
   },
 ];
@@ -82,8 +82,8 @@ const pricingTiers = [
 const archTiers = [
   { tier: "CLI", tech: "Typer · Python", desc: "Calculs en ligne de commande, scriptable, CI/CD compatible. Zéro dépendance graphique.", status: "Production", barW: "100%", accent: "bg-cyan", textAccent: "text-cyan", borderAccent: "border-cyan/40" },
   { tier: "Desktop GUI", tech: "Tauri v2 · Rust + Python", desc: "Interface native offline, Windows/macOS/Linux. PostgreSQL embarqué.", status: "Développement", barW: "65%", accent: "bg-white/30", textAccent: "text-white/50", borderAccent: "border-white/15" },
-  { tier: "API REST", tech: "FastAPI v2.5 · WebSocket", desc: "Endpoints JSON, jobs asynchrones, intégration LCPI/Atlas/IgnisCore.", status: "Roadmap v2.5", barW: "30%", accent: "bg-white/15", textAccent: "text-white/25", borderAccent: "border-white/8" },
-  { tier: "SaaS Enterprise", tech: "Cloud · Multi-tenant", desc: "Déploiement cloud, SSO Active Directory, SLA garanti 99.9%.", status: "Roadmap 2027", barW: "10%", accent: "bg-white/8", textAccent: "text-white/15", borderAccent: "border-white/5" },
+  { tier: "API REST", tech: "", desc: "Endpoints JSON, jobs asynchrones, intégration LCPI/Atlas/IgnisCore.", status: "Roadmap v2.5", barW: "30%", accent: "bg-white/15", textAccent: "text-white/25", borderAccent: "border-white/8" },
+  { tier: "SaaS Enterprise", tech: "", desc: "Vision à moyen terme, non engagée.", status: "Roadmap 2027", barW: "10%", accent: "bg-white/8", textAccent: "text-white/15", borderAccent: "border-white/5" },
 ];
 
 export default function LCPIPage() {
@@ -144,8 +144,7 @@ export default function LCPIPage() {
           <motion.div style={{ opacity: subtitleOpacity, y: subtitleY }}>
             <div className="flex flex-col md:flex-row md:items-end md:justify-between border-t border-white/10 pt-8 mt-4 gap-8">
               <div className="max-w-xl">
-                <p className="text-xl text-white/50 leading-relaxed mb-2">La Calculatrice de l&apos;Ingénieur Civil</p>
-                <p className="font-mono text-[10px] tracking-[0.2em] text-white/25 uppercase">6 modules · 3 en production · 10-50× moins cher · 100% auditable</p>
+                <p className="text-xl text-white/50 leading-relaxed">La Calculatrice de l&apos;Ingénieur Civil</p>
               </div>
               <div className="flex gap-4 flex-wrap">
                 <a href="#demo" className="bg-cyan text-black px-8 py-3.5 font-mono text-[10px] tracking-[0.25em] uppercase hover:bg-cyan/90 transition-colors">Demander une démo</a>
@@ -360,7 +359,7 @@ export default function LCPIPage() {
                           <span className={`text-lg font-medium ${t.textAccent}`}>{t.tier}</span>
                           <span className="font-mono text-[9px] text-white/20 tracking-[0.2em] uppercase border border-white/10 px-2 py-0.5">{t.status}</span>
                         </div>
-                        <p className="font-mono text-[9px] text-white/20 tracking-wide">{t.tech}</p>
+                        {t.tech && <p className="font-mono text-[9px] text-white/20 tracking-wide">{t.tech}</p>}
                       </div>
                       {/* Scrubbed bar */}
                       <div className="hidden md:block w-20 h-px bg-white/5 mt-3 relative overflow-hidden">
@@ -420,15 +419,14 @@ export default function LCPIPage() {
           </FadeIn>
           <div className="grid md:grid-cols-3 gap-px bg-[#e5e5e5]">
             {[
-              { step: "01", title: "Entrée des paramètres", desc: "Géométrie, charges, matériaux, norme applicable. CLI en mode interactif ou fichier JSON projet.", code: "lcpi beton init\n--section radier\n--fc28 25 --fe 500", tag: "lcpi init" },
-              { step: "02", title: "Calcul & Optimisation", desc: "Vérification ELU/ELS, optimisation des sections d'acier, validation ferraillage, rapport intermédiaire JSON.", code: "lcpi beton run\n--check ELU ELS\n--optimize True", tag: "lcpi run" },
-              { step: "03", title: "Note de calcul signée", desc: "PDF généré, paginé, avec toutes les formules, hypothèses et la signature Ed25519 en pied de page.", code: "lcpi beton export\n--format pdf docx\n--sign ed25519", tag: "lcpi export" },
+              { step: "01", title: "Entrée des paramètres", desc: "Géométrie, charges, matériaux, norme applicable. CLI en mode interactif ou fichier JSON projet.", code: "lcpi beton init\n--section radier\n--fc28 25 --fe 500" },
+              { step: "02", title: "Calcul & Optimisation", desc: "Vérification ELU/ELS, optimisation des sections d'acier, validation ferraillage, rapport intermédiaire JSON.", code: "lcpi beton run\n--check ELU ELS\n--optimize True" },
+              { step: "03", title: "Note de calcul signée", desc: "PDF généré, paginé, avec toutes les formules, hypothèses et la signature Ed25519 en pied de page.", code: "lcpi beton export\n--format pdf docx\n--sign ed25519" },
             ].map((w) => (
               <FadeIn key={w.step}>
                 <div className="bg-white p-8 md:p-10 h-full">
                   <div className="flex items-center gap-3 mb-6">
                     <span className="font-mono text-[9px] tracking-[0.3em] text-[#ccc] uppercase">{w.step}</span>
-                    <span className="font-mono text-[9px] tracking-[0.2em] text-cyan uppercase border border-cyan/20 px-2.5 py-1">{w.tag}</span>
                   </div>
                   <h3 className="text-base font-medium text-black mb-3">{w.title}</h3>
                   <p className="text-sm text-[#555] leading-relaxed mb-6">{w.desc}</p>
@@ -457,7 +455,7 @@ export default function LCPIPage() {
             {[
               { icon: "ED25519", title: "Auditabilité Cryptographique", desc: "Chaque rapport porte une signature Ed25519 horodatée. Toute modification post-génération est détectable.", tag: "Ed25519 + SHA3-256" },
               { icon: "REG", title: "FallbackRegistry", desc: "Si un paramètre local est absent, LCPI applique automatiquement la valeur normative de référence et le signale explicitement dans le rapport. Zéro zone grise.", tag: "EPS-001" },
-              { icon: "VAL", title: "Validation Comportementale", desc: "Le protocole EPS-001 vérifie que les modules produisent des résultats cohérents sur des cas tests standardisés à chaque mise à jour. Pas de régression silencieuse.", tag: "BAEL 91 · EC2 · EC3" },
+              { icon: "VAL", title: "Validation Comportementale", desc: "Le protocole EPS-001 vérifie que les modules produisent des résultats cohérents sur des cas tests standardisés à chaque mise à jour. Pas de régression silencieuse.", tag: "BAEL 91 · EC2" },
             ].map((item) => (
               <FadeIn key={item.title}>
                 <div className="bg-black p-8 md:p-10 h-full">
