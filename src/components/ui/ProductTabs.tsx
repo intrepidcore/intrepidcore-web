@@ -72,7 +72,7 @@ export function ProductTabs() {
 
   return (
     <div className="fixed top-16 md:top-20 left-0 right-0 z-40 bg-black/90 backdrop-blur-md border-b border-[#1a1a1a]">
-      <div className="max-w-screen-2xl mx-auto px-8 md:px-12">
+      <div className="max-w-[1280px] mx-auto px-8 md:px-12">
         <div className="flex items-center overflow-x-auto [&::-webkit-scrollbar]:hidden">
           {tabs.map((tab, i) => (
             <button

@@ -55,7 +55,7 @@ const standardsData = [
     description:
       "Chaque calcul expose ses formules, normes appliquées et hypothèses d'entrée. Une transparence absolue pour une validation inattaquable par les pairs.",
     progress: 100,
-    metrics: ["HMAC-SHA256", "ISO-COMPLIANT"],
+    metrics: ["Ed25519 + SHA3-256", "ISO-COMPLIANT"],
     image: "/visuel/structure-01.jpg",
   },
   {
@@ -92,7 +92,7 @@ export default function Home() {
       {/* ── HERO ── */}
       <section id="hero" className="relative min-h-screen flex items-center overflow-hidden bg-black">
         <HeroCarousel images={heroImages} />
-        <div className="relative z-10 max-w-screen-2xl mx-auto px-8 md:px-12 w-full pt-32 pb-20 md:pt-48 md:pb-40">
+        <div className="relative z-10 max-w-[1280px] mx-auto px-8 md:px-12 w-full pt-32 pb-20 md:pt-48 md:pb-40">
           <FadeIn>
             <p className="font-mono text-[9px] md:text-[10px] tracking-[0.4em] text-cyan uppercase mb-6">
               Système d&apos;exploitation géotechnique et structurel
@@ -131,7 +131,7 @@ export default function Home() {
 
       {/* ── RUPTURE VISUELLE BRUTALISTE ── */}
       <section className="bg-white text-black overflow-hidden">
-        <div className="max-w-screen-2xl mx-auto px-8 md:px-12 py-20 md:py-28">
+        <div className="max-w-[1280px] mx-auto px-8 md:px-12 py-20 md:py-28">
           <FadeIn>
             <p className="font-mono text-[9px] tracking-[0.35em] text-[#bbb] uppercase mb-14 md:mb-20">
               / Écosystème IntrepidCore
@@ -168,7 +168,7 @@ export default function Home() {
 
       {/* ── DOCTRINES OPÉRATIONNELLES ── */}
       <section id="doctrines" className="py-28 md:py-40 px-8 md:px-12 bg-black text-white">
-        <div className="max-w-screen-2xl mx-auto">
+        <div className="max-w-[1280px] mx-auto">
           <FadeIn>
             <p className="font-mono text-[9px] tracking-[0.35em] text-[#444] uppercase mb-4">
               / Axiomes de l&apos;Architecture
@@ -223,7 +223,7 @@ export default function Home() {
 
       {/* ── CTA ── */}
       <section id="demo" className="py-32 md:py-48 px-8 md:px-12 bg-black text-white border-t border-[#111]">
-        <div className="max-w-screen-2xl mx-auto text-center">
+        <div className="max-w-[1280px] mx-auto text-center">
           <FadeIn>
             <p className="font-mono text-[9px] tracking-[0.4em] text-[#444] uppercase mb-6">
               / Demander une démonstration
@@ -251,7 +251,7 @@ export default function Home() {
 
       {/* ── MEGA-FOOTER ── */}
       <footer className="bg-black text-white border-t border-[#111]">
-        <div className="max-w-screen-2xl mx-auto px-8 md:px-12 pt-14 pb-8 border-b border-[#111]">
+        <div className="max-w-[1280px] mx-auto px-8 md:px-12 pt-14 pb-8 border-b border-[#111]">
           <div className="flex flex-wrap gap-3">
             {["LINKEDIN", "YOUTUBE", "X / TWITTER", "POLITIQUE DES COOKIES"].map((s) => (
               <a key={s} href="#" className="border border-[#252525] rounded-full px-5 py-2.5 font-mono text-[9px] tracking-[0.2em] text-[#444] hover:text-white hover:border-[#555] transition-colors uppercase">
@@ -260,7 +260,7 @@ export default function Home() {
             ))}
           </div>
         </div>
-        <div className="max-w-screen-2xl mx-auto px-8 md:px-12 py-14">
+        <div className="max-w-[1280px] mx-auto px-8 md:px-12 py-14">
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-10 pb-14 border-b border-[#111]">
             <div className="col-span-2 md:col-span-3 lg:col-span-1">
               <img src="/logos/logo-mark.svg" alt="intrepidcore" className="h-8 w-auto mb-6 brightness-0 invert opacity-40" />
@@ -272,7 +272,7 @@ export default function Home() {
             {[
               { title: "Plateformes", color: "text-cyan", links: [{ l: "LCPI v0.1", h: "/produits/lcpi" }, { l: "Atlas v0.2", h: "/produits/atlas" }, { l: "IgnisCore v0.3", h: "/produits/igniscore" }] },
               { title: "Secteurs", color: "text-atlas", links: [{ l: "Génie Hydraulique", h: "#" }, { l: "Géotechnique", h: "#" }, { l: "Valorisation Biomasse", h: "#" }, { l: "Réseaux Incendie", h: "#" }, { l: "Fondations", h: "#" }] },
-              { title: "Technologies", color: "text-ignis", links: [{ l: "Modélisation FEA", h: "#" }, { l: "Réseaux PINN", h: "#" }, { l: "Krigeage KED/RK", h: "#" }, { l: "Moteur BioCore", h: "#" }, { l: "HMAC-SHA256", h: "#" }] },
+              { title: "Technologies", color: "text-ignis", links: [{ l: "Modélisation FEA", h: "#" }, { l: "Réseaux PINN", h: "#" }, { l: "Krigeage KED/RK", h: "#" }, { l: "Moteur BioCore", h: "#" }, { l: "Ed25519 + SHA3-256", h: "#" }] },
               { title: "Standards", color: "text-[#555]", links: [{ l: "BAEL 91", h: "#" }, { l: "Eurocodes", h: "#" }, { l: "EPS-001", h: "#" }, { l: "Conformité Sismique", h: "#" }, { l: "Standard ICES", h: "/produits/ices" }] },
               { title: "Ressources", color: "text-[#555]", links: [{ l: "Documentation", h: "#" }, { l: "Paper Atlas", h: "#" }, { l: "À propos", h: "#" }, { l: "Contact", h: "/#demo" }, { l: "Mentions légales", h: "#" }] },
             ].map((col) => (

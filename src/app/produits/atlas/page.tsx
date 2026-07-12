@@ -295,7 +295,7 @@ export default function AtlasPage() {
           backgroundImage: "radial-gradient(ellipse at 30% 60%, #40916C 0%, transparent 55%), linear-gradient(#40916C 1px, transparent 1px), linear-gradient(90deg, #40916C 1px, transparent 1px)",
           backgroundSize: "100% 100%, 60px 60px, 60px 60px"
         }} />
-        <div className="relative z-10 max-w-screen-2xl mx-auto w-full pt-40">
+        <div className="relative z-10 max-w-[1280px] mx-auto w-full pt-40">
           <motion.div style={{ opacity: subtitleOpacity, y: subtitleY }}>
             <div className="flex items-center gap-4 mb-8">
               <span className="font-mono text-[9px] tracking-[0.35em] text-[#40916C] uppercase border border-[#40916C]/30 px-3 py-1.5">v1.4.0 · Opérationnel</span>
@@ -338,7 +338,7 @@ export default function AtlasPage() {
 
       {/* ── STATS — WHITE ── */}
       <section className="py-20 px-8 md:px-16 bg-white border-t border-[#e5e5e5]">
-        <div className="max-w-screen-2xl mx-auto grid grid-cols-2 md:grid-cols-4">
+        <div className="max-w-[1280px] mx-auto grid grid-cols-2 md:grid-cols-4">
           {[
             { val: "573", label: "Sondages géoréférencés terrain", tag: "/ TERRAIN" },
             { val: "56 600", label: "km² — Togo national", tag: "/ COUVERTURE" },
@@ -356,11 +356,11 @@ export default function AtlasPage() {
 
       {/* ── BASE DE DONNÉES — BLACK ── */}
       <section className="py-28 md:py-36 px-8 md:px-16 bg-black border-t border-white/5">
-        <div className="max-w-screen-2xl mx-auto grid md:grid-cols-2 gap-16 md:gap-24 items-start">
+        <div className="max-w-[1280px] mx-auto grid md:grid-cols-2 gap-16 md:gap-24 items-start">
           <FadeIn>
             <p className="font-mono text-[9px] tracking-[0.35em] text-white/30 uppercase mb-4">/ Base de Données</p>
             <h2 className="text-4xl md:text-5xl font-medium tracking-tight mb-6">La première base<br /><span className="text-white/25">géotechnique numérique<br />d&apos;Afrique de l&apos;Ouest.</span></h2>
-            <p className="text-base text-white/40 leading-relaxed mb-10 max-w-lg">1 884 146 valeurs interpolées sur 29 407 mailles × 3 horizons × 11 paramètres. PostGIS 16, audit HMAC-SHA256, conformité RGPD. LNBTP, TREC, LAB TP, GeoTech, FORMATEC.</p>
+            <p className="text-base text-white/40 leading-relaxed mb-10 max-w-lg">1 884 146 valeurs interpolées sur 29 407 mailles × 3 horizons × 11 paramètres. PostGIS 16, audit SHA3-256, conformité RGPD. LNBTP, TREC, LAB TP, GeoTech, FORMATEC.</p>
             <div className="space-y-0">
               {[
                 { label: "Argilosité", val: "VBS · IP · WL · WP · EG" },
@@ -368,7 +368,7 @@ export default function AtlasPage() {
                 { label: "Horizons", val: "H1 (0–1m) · H2 (1–1.5m) · H3 (>1.5m)" },
                 { label: "Maillage", val: "29 407 mailles × 2km² — EPSG:25231 UTM31N" },
                 { label: "Méthodes stockées", val: "9 méthodes — 1 884 146 lignes" },
-                { label: "Audit", val: "HMAC-SHA256 par enregistrement" },
+                { label: "Audit", val: "SHA3-256 par enregistrement" },
               ].map((row) => (
                 <div key={row.label} className="flex items-center gap-4 py-3.5 border-b border-white/5">
                   <span className="font-mono text-[9px] tracking-[0.25em] text-white/20 uppercase min-w-[140px]">{row.label}</span>
@@ -510,7 +510,7 @@ export default function AtlasPage() {
 
       {/* ── VALIDATION LOO-CV — BLACK ── */}
       <section className="py-28 md:py-36 px-8 md:px-16 bg-black border-t border-white/5">
-        <div className="max-w-screen-2xl mx-auto">
+        <div className="max-w-[1280px] mx-auto">
           <FadeIn>
             <p className="font-mono text-[9px] tracking-[0.35em] text-white/30 uppercase mb-4">/ Validation Rigoureuse</p>
             <h2 className="text-4xl md:text-5xl font-medium tracking-tight mb-4">LOO-CV complet.<br /><span className="text-white/25">Bloc spatial. Roberts 2017.</span></h2>
@@ -634,7 +634,7 @@ export default function AtlasPage() {
 
       {/* ── 5 RÉGIONS PHYSIOGRAPHIQUES — WHITE ── */}
       <section className="py-28 md:py-36 px-8 md:px-16 bg-white border-t border-[#e5e5e5]">
-        <div className="max-w-screen-2xl mx-auto">
+        <div className="max-w-[1280px] mx-auto">
           <FadeIn>
             <p className="font-mono text-[9px] tracking-[0.35em] text-[#40916C] uppercase mb-4">/ Cartographie Nationale</p>
             <h2 className="text-4xl md:text-6xl font-medium tracking-tight text-black mb-4">5 régions.<br /><span className="text-[#999]">5 régimes géotechniques.</span></h2>
@@ -692,7 +692,7 @@ export default function AtlasPage() {
 
       {/* ── CORRÉLATIONS & VARIOGRAMME — BLACK ── */}
       <section className="py-28 md:py-36 px-8 md:px-16 bg-black border-t border-white/5">
-        <div className="max-w-screen-2xl mx-auto">
+        <div className="max-w-[1280px] mx-auto">
           <FadeIn>
             <p className="font-mono text-[9px] tracking-[0.35em] text-white/30 uppercase mb-4">/ Corrélations & Variogramme</p>
             <h2 className="text-4xl md:text-5xl font-medium tracking-tight mb-12">Structure spatiale<br /><span className="text-white/25">quantifiée.</span></h2>
@@ -825,7 +825,7 @@ export default function AtlasPage() {
 
       {/* ── CLASSIFICATION NF P 11-300 + MEILLEUR MODÈLE — WHITE ── */}
       <section className="py-28 md:py-36 px-8 md:px-16 bg-white border-t border-[#e5e5e5]">
-        <div className="max-w-screen-2xl mx-auto">
+        <div className="max-w-[1280px] mx-auto">
           <FadeIn>
             <p className="font-mono text-[9px] tracking-[0.35em] text-[#40916C] uppercase mb-4">/ Classification & Modèle Optimal</p>
             <h2 className="text-4xl md:text-5xl font-medium tracking-tight text-black mb-12">NF P 11-300.<br /><span className="text-[#999]">Modèle optimal par paramètre.</span></h2>
@@ -908,7 +908,7 @@ export default function AtlasPage() {
 
       {/* ── RGA — BLACK ── */}
       <section className="py-28 md:py-36 px-8 md:px-16 bg-black border-t border-white/5">
-        <div className="max-w-screen-2xl mx-auto">
+        <div className="max-w-[1280px] mx-auto">
           <FadeIn>
             <p className="font-mono text-[9px] tracking-[0.35em] text-white/30 uppercase mb-4">/ Classification RGA</p>
             <h2 className="text-4xl md:text-5xl font-medium tracking-tight mb-4">Risque Retrait-Gonflement<br /><span className="text-white/25">sur 29 407 mailles.</span></h2>
@@ -931,7 +931,7 @@ export default function AtlasPage() {
 
       {/* ── PLATEFORMES — WHITE ── */}
       <section id="plateformes" className="py-28 md:py-36 px-8 md:px-16 bg-white border-t border-[#e5e5e5]">
-        <div className="max-w-screen-2xl mx-auto">
+        <div className="max-w-[1280px] mx-auto">
           <FadeIn>
             <p className="font-mono text-[9px] tracking-[0.35em] text-[#999] uppercase mb-4">/ Plateformes</p>
             <h2 className="text-4xl md:text-5xl font-medium tracking-tight text-black mb-16">4 points d&apos;accès.<br /><span className="text-[#999]">Zéro compromis.</span></h2>
@@ -963,7 +963,7 @@ export default function AtlasPage() {
 
       {/* ── API PHASE 2 — BLACK ── */}
       <section className="py-28 md:py-36 px-8 md:px-16 bg-black border-t border-white/5">
-        <div className="max-w-screen-2xl mx-auto grid md:grid-cols-2 gap-16 items-start">
+        <div className="max-w-[1280px] mx-auto grid md:grid-cols-2 gap-16 items-start">
           <FadeIn>
             <p className="font-mono text-[9px] tracking-[0.35em] text-white/30 uppercase mb-4">/ Phase 2 — API REST</p>
             <h2 className="text-3xl md:text-4xl font-medium tracking-tight mb-6">Requête géotechnique<br /><span className="text-white/25">en une ligne.</span></h2>
@@ -1011,7 +1011,7 @@ export default function AtlasPage() {
 
       {/* ── INTÉGRATION — WHITE ── */}
       <section className="py-24 px-8 md:px-16 bg-white border-t border-[#e5e5e5]">
-        <div className="max-w-screen-2xl mx-auto">
+        <div className="max-w-[1280px] mx-auto">
           <FadeIn>
             <p className="font-mono text-[9px] tracking-[0.35em] text-[#999] uppercase mb-4">/ Intégration Écosystème</p>
             <h2 className="text-3xl md:text-4xl font-medium tracking-tight text-black mb-12">Atlas alimente l&apos;écosystème.</h2>
@@ -1044,7 +1044,7 @@ export default function AtlasPage() {
 
       {/* ── PRICING — BLACK ── */}
       <section className="py-28 md:py-36 px-8 md:px-16 bg-black border-t border-white/5">
-        <div className="max-w-screen-2xl mx-auto">
+        <div className="max-w-[1280px] mx-auto">
           <FadeIn>
             <p className="font-mono text-[9px] tracking-[0.35em] text-white/30 uppercase mb-4">/ Tarification</p>
             <h2 className="text-4xl md:text-5xl font-medium tracking-tight mb-16">Accessible.<br /><span className="text-white/25">Scalable.</span></h2>
@@ -1078,7 +1078,7 @@ export default function AtlasPage() {
 
       {/* ── CTA — WHITE ── */}
       <section id="demo" className="py-40 px-8 md:px-16 bg-white border-t border-[#e5e5e5] text-center">
-        <div className="max-w-screen-2xl mx-auto">
+        <div className="max-w-[1280px] mx-auto">
           <FadeIn>
             <p className="font-mono text-[9px] tracking-[0.4em] text-[#999] uppercase mb-6">/ Accéder à Atlas</p>
             <h2 className="text-4xl md:text-7xl font-medium tracking-tight leading-[1.05] max-w-3xl mx-auto mb-10 text-black text-balance">

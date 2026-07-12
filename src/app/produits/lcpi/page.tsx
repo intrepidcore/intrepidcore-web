@@ -49,7 +49,7 @@ const comparison = [
   { feature: "Normes locales BAEL 91", lcpi: "✓ Natif", epanet: "—", autocad: "Partiel", robot: "Partiel" },
   { feature: "Eurocodes 2/3/5", lcpi: "✓ Complet", epanet: "—", autocad: "✓", robot: "✓" },
   { feature: "Optimisation NSGA-II", lcpi: "✓ Natif", epanet: "—", autocad: "—", robot: "—" },
-  { feature: "Rapport HMAC-SHA256", lcpi: "✓ Systématique", epanet: "—", autocad: "—", robot: "—" },
+  { feature: "Rapport signé Ed25519", lcpi: "✓ Systématique", epanet: "—", autocad: "—", robot: "—" },
   { feature: "CLI scriptable / CI-CD", lcpi: "✓ Python Typer", epanet: "—", autocad: "—", robot: "—" },
   { feature: "Desktop offline", lcpi: "✓ Tauri v2", epanet: "✓", autocad: "✓", robot: "✓" },
   { feature: "API REST intégrée", lcpi: "v2.5 (roadmap)", epanet: "—", autocad: "—", robot: "Partiel" },
@@ -114,7 +114,7 @@ export default function LCPIPage() {
           backgroundSize: "80px 80px"
         }} />
 
-        <div className="relative z-10 max-w-screen-2xl mx-auto w-full pt-40">
+        <div className="relative z-10 max-w-[1280px] mx-auto w-full pt-40">
           {/* Badge */}
           <motion.div style={{ opacity: subtitleOpacity, y: subtitleY }}>
             <div className="flex items-center gap-4 mb-8">
@@ -159,12 +159,12 @@ export default function LCPIPage() {
 
       {/* ── STATS — WHITE ── */}
       <section className="py-20 px-8 md:px-16 bg-white border-t border-[#e5e5e5]">
-        <div className="max-w-screen-2xl mx-auto grid grid-cols-2 md:grid-cols-4">
+        <div className="max-w-[1280px] mx-auto grid grid-cols-2 md:grid-cols-4">
           {[
             { val: "15+", label: "Modules de calcul", tag: "/ COUVERTURE" },
             { val: "5", label: "Domaines d'ingénierie", tag: "/ DOMAINES" },
             { val: "10-50×", label: "Moins cher que l'alternative", tag: "/ ÉCONOMIE" },
-            { val: "100%", label: "Auditable HMAC-SHA256", tag: "/ STANDARD ICES" },
+            { val: "100%", label: "Auditable Ed25519", tag: "/ STANDARD ICES" },
           ].map((s, i) => (
             <FadeIn key={s.tag} delay={i * 0.06} className={`py-8 md:py-0 px-0 md:px-10 ${i > 0 ? "border-t md:border-t-0 md:border-l border-[#e5e5e5]" : ""}`}>
               <p className="font-mono text-[9px] tracking-[0.35em] text-cyan uppercase mb-3">{s.tag}</p>
@@ -180,7 +180,7 @@ export default function LCPIPage() {
 
       {/* ── COMPARAISON — WHITE ── */}
       <section className="py-28 md:py-36 px-8 md:px-16 bg-white border-t border-[#e5e5e5]">
-        <div className="max-w-screen-2xl mx-auto">
+        <div className="max-w-[1280px] mx-auto">
           <FadeIn>
             <p className="font-mono text-[9px] tracking-[0.35em] text-cyan uppercase mb-4">/ Comparaison Marché</p>
             <h2 className="text-4xl md:text-5xl font-medium tracking-tight text-black mb-4">LCPI vs. l&apos;existant.</h2>
@@ -217,7 +217,7 @@ export default function LCPIPage() {
 
       {/* ── ARCHITECTURE — STICKY ASYMÉTRIQUE — BLACK ── */}
       <section className="py-28 md:py-36 px-8 md:px-16 bg-black border-t border-white/5">
-        <div className="max-w-screen-2xl mx-auto">
+        <div className="max-w-[1280px] mx-auto">
           <div className="flex flex-col md:flex-row gap-16 md:gap-24 items-start">
 
             {/* LEFT — STICKY */}
@@ -291,7 +291,7 @@ export default function LCPIPage() {
                           <p><span className="text-cyan">✓</span> <span className="text-white">Poteau 30×30cm</span> <span className="text-white/30">· fc28=25MPa · Fe500</span></p>
                           <p><span className="text-cyan">✓</span> <span className="text-white">Nu=420kN · Mu=18kN.m</span></p>
                           <p><span className="text-cyan">✓</span> <span className="text-white">As=8.04cm²</span> <span className="text-white/30">→ 4HA16 + 4HA14</span></p>
-                          <p><span className="text-cyan">✓</span> <span className="text-white">Note signée</span> <span className="text-white/30">HMAC-SHA256 → note_calcul_20260620.pdf</span></p>
+                          <p><span className="text-cyan">✓</span> <span className="text-white">Note signée</span> <span className="text-white/30">Ed25519 → note_calcul_20260620.pdf</span></p>
                           <p className="mt-2 text-white/20">Durée totale : <span className="text-white">2.8s</span></p>
                         </div>
                       </div>
@@ -306,7 +306,7 @@ export default function LCPIPage() {
 
       {/* ── WORKFLOW — WHITE ── */}
       <section className="py-28 md:py-36 px-8 md:px-16 bg-white border-t border-[#e5e5e5]">
-        <div className="max-w-screen-2xl mx-auto">
+        <div className="max-w-[1280px] mx-auto">
           <FadeIn>
             <p className="font-mono text-[9px] tracking-[0.35em] text-cyan uppercase mb-4">/ Workflow BAEL 91</p>
             <h2 className="text-4xl md:text-5xl font-medium tracking-tight text-black mb-4">De la donnée à la note.<br /><span className="text-[#999]">En 3 commandes.</span></h2>
@@ -316,7 +316,7 @@ export default function LCPIPage() {
             {[
               { step: "01", title: "Entrée des paramètres", desc: "Géométrie, charges, matériaux, norme applicable. CLI en mode interactif ou fichier JSON projet.", code: "lcpi beton init\n--section radier\n--fc28 25 --fe 500", tag: "lcpi init" },
               { step: "02", title: "Calcul & Optimisation", desc: "Vérification ELU/ELS, optimisation des sections d'acier, validation ferraillage, rapport intermédiaire JSON.", code: "lcpi beton run\n--check ELU ELS\n--optimize True", tag: "lcpi run" },
-              { step: "03", title: "Note de calcul signée", desc: "PDF généré, paginé, avec toutes les formules, hypothèses et la signature HMAC-SHA256 en pied de page.", code: "lcpi beton export\n--format pdf docx\n--sign hmac-sha256", tag: "lcpi export" },
+              { step: "03", title: "Note de calcul signée", desc: "PDF généré, paginé, avec toutes les formules, hypothèses et la signature Ed25519 en pied de page.", code: "lcpi beton export\n--format pdf docx\n--sign ed25519", tag: "lcpi export" },
             ].map((w) => (
               <FadeIn key={w.step}>
                 <div className="bg-white p-8 md:p-10 h-full">
@@ -336,14 +336,14 @@ export default function LCPIPage() {
 
       {/* ── STANDARD ICES — BLACK ── */}
       <section className="py-28 md:py-36 px-8 md:px-16 bg-black border-t border-white/5">
-        <div className="max-w-screen-2xl mx-auto">
+        <div className="max-w-[1280px] mx-auto">
           <FadeIn>
             <p className="font-mono text-[9px] tracking-[0.35em] text-white/30 uppercase mb-4">/ Standard ICES</p>
             <h2 className="text-4xl md:text-5xl font-medium tracking-tight mb-14">Chaque calcul est signé.<br /><span className="text-white/25">Chaque norme est tracée.</span></h2>
           </FadeIn>
           <div className="grid md:grid-cols-3 gap-px bg-white/5">
             {[
-              { icon: "HMAC", title: "Auditabilité Cryptographique", desc: "Chaque rapport porte une signature HMAC-SHA256 horodatée. Toute modification post-génération est détectable. Vos calculs sont inattaquables en expertise judiciaire.", tag: "HMAC-SHA256" },
+              { icon: "ED25519", title: "Auditabilité Cryptographique", desc: "Chaque rapport porte une signature Ed25519 horodatée. Toute modification post-génération est détectable.", tag: "Ed25519 + SHA3-256" },
               { icon: "REG", title: "FallbackRegistry", desc: "Si un paramètre local est absent, LCPI applique automatiquement la valeur normative de référence et le signale explicitement dans le rapport. Zéro zone grise.", tag: "EPS-001" },
               { icon: "VAL", title: "Validation Comportementale", desc: "Le protocole EPS-001 vérifie que les modules produisent des résultats cohérents sur des cas tests standardisés à chaque mise à jour. Pas de régression silencieuse.", tag: "BAEL 91 · EC2 · EC3" },
             ].map((item) => (
@@ -362,7 +362,7 @@ export default function LCPIPage() {
 
       {/* ── INTÉGRATION ÉCOSYSTÈME — WHITE ── */}
       <section className="py-24 px-8 md:px-16 bg-white border-t border-[#e5e5e5]">
-        <div className="max-w-screen-2xl mx-auto">
+        <div className="max-w-[1280px] mx-auto">
           <FadeIn>
             <p className="font-mono text-[9px] tracking-[0.35em] text-[#999] uppercase mb-4">/ Intégration Écosystème</p>
             <h2 className="text-3xl md:text-4xl font-medium tracking-tight text-black mb-12">LCPI ne travaille pas seul.</h2>
@@ -395,7 +395,7 @@ export default function LCPIPage() {
 
       {/* ── PRICING — BLACK ── */}
       <section className="py-28 md:py-36 px-8 md:px-16 bg-black border-t border-white/5">
-        <div className="max-w-screen-2xl mx-auto">
+        <div className="max-w-[1280px] mx-auto">
           <FadeIn>
             <p className="font-mono text-[9px] tracking-[0.35em] text-white/30 uppercase mb-4">/ Tarification</p>
             <h2 className="text-4xl md:text-5xl font-medium tracking-tight mb-16">Transparent.<br /><span className="text-white/25">Sans surprise.</span></h2>
@@ -429,7 +429,7 @@ export default function LCPIPage() {
 
       {/* ── CTA — WHITE ── */}
       <section id="demo" className="py-40 px-8 md:px-16 bg-white border-t border-[#e5e5e5] text-center">
-        <div className="max-w-screen-2xl mx-auto">
+        <div className="max-w-[1280px] mx-auto">
           <FadeIn>
             <p className="font-mono text-[9px] tracking-[0.4em] text-[#999] uppercase mb-6">/ Démarrer avec LCPI</p>
             <h2 className="text-4xl md:text-7xl font-medium tracking-tight leading-[1.05] max-w-3xl mx-auto mb-10 text-black text-balance">

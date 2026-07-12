@@ -80,7 +80,7 @@ function AnimatedCounter({
 export function StatsCounter() {
   return (
     <section className="py-16 md:py-24 px-8 md:px-12 bg-black text-white border-t border-[#111]">
-      <div className="max-w-screen-2xl mx-auto">
+      <div className="max-w-[1280px] mx-auto">
         <div className="grid grid-cols-2 md:grid-cols-4">
           {stats.map((stat, i) => (
             <FadeIn

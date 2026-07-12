@@ -70,7 +70,7 @@ export function HamburgerNav() {
             : "bg-transparent"
         }`}
       >
-        <div className="max-w-screen-2xl mx-auto px-8 md:px-12 h-16 md:h-20 flex items-center justify-between">
+        <div className="max-w-[1280px] mx-auto px-8 md:px-12 h-16 md:h-20 flex items-center justify-between">
           <a href="/" className="flex items-center z-10 relative">
             <img
               src="/logos/logo-intrepid-core.svg"
@@ -120,7 +120,7 @@ export function HamburgerNav() {
             <div className="h-16 md:h-20 flex-shrink-0" />
 
             <div className="flex-1 overflow-y-auto">
-              <div className="max-w-screen-2xl mx-auto px-8 md:px-12 py-12 md:py-20">
+              <div className="max-w-[1280px] mx-auto px-8 md:px-12 py-12 md:py-20">
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-10 md:gap-16">
                   {navColumns.map((col, i) => (
                     <motion.div

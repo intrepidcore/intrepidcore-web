@@ -309,7 +309,7 @@ export default function IgnisCorePage() {
       >
         <HeroAbstraction color="#E85D04" />
 
-        <div className="relative z-10 max-w-screen-2xl mx-auto w-full pt-40">
+        <div className="relative z-10 max-w-[1280px] mx-auto w-full pt-40">
           <motion.div style={{ opacity: subtitleOpacity, y: subtitleY }}>
             <div className="flex items-center gap-4 mb-8">
               <span className="font-mono text-[9px] tracking-[0.35em] text-[#E85D04] uppercase border border-[#E85D04]/30 px-3 py-1.5">BioCore MVP · Q3 2026</span>
@@ -352,7 +352,7 @@ export default function IgnisCorePage() {
 
       {/* ── STATS — DARK GRID ── */}
       <section className="border-t border-[var(--ignis-border-1)] bg-[var(--ignis-bg)]">
-        <div className="max-w-screen-2xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-px bg-[var(--ignis-border-1)]">
+        <div className="max-w-[1280px] mx-auto grid grid-cols-2 md:grid-cols-4 gap-px bg-[var(--ignis-border-1)]">
           {[
             { val: "20", label: "Biomasses africaines caractérisées", tag: "/ BASE DE DONNÉES" },
             { val: "4", label: "Modules spécialisés actifs", tag: "/ ARCHITECTURE" },
@@ -448,7 +448,7 @@ export default function IgnisCorePage() {
 
       {/* ── BIOMASSES — DARK DATA GRID ── */}
       <section className="py-28 md:py-36 px-8 md:px-16 bg-[var(--ignis-bg)] border-t border-[var(--ignis-border-1)]">
-        <div className="max-w-screen-2xl mx-auto">
+        <div className="max-w-[1280px] mx-auto">
           <FadeIn>
             <p className="font-mono text-[9px] tracking-[0.35em] text-[var(--ignis-dim)] uppercase mb-4">/ Base de Données Biomasses</p>
             <h2 className="text-4xl md:text-5xl font-medium tracking-tight text-[var(--ignis-text)] mb-4">
@@ -574,7 +574,7 @@ export default function IgnisCorePage() {
 
       {/* ── ROADMAP — DARK VERTICAL TIMELINE ── */}
       <section className="py-28 md:py-36 px-8 md:px-16 bg-[var(--ignis-bg)] border-t border-[var(--ignis-border-1)]">
-        <div className="max-w-screen-2xl mx-auto">
+        <div className="max-w-[1280px] mx-auto">
           <FadeIn>
             <p className="font-mono text-[9px] tracking-[0.35em] text-[var(--ignis-dim)] uppercase mb-4">/ Roadmap Produit</p>
             <h2 className="text-4xl md:text-5xl font-medium tracking-tight text-[var(--ignis-text)] mb-20">
@@ -622,7 +622,7 @@ export default function IgnisCorePage() {
 
       {/* ── CTA — BLACK ── */}
       <section id="waitlist" className="py-40 px-8 md:px-16 bg-[var(--ignis-bg)] border-t border-[var(--ignis-border-1)] text-center">
-        <div className="max-w-screen-2xl mx-auto">
+        <div className="max-w-[1280px] mx-auto">
           <FadeIn>
             <p className="font-mono text-[9px] tracking-[0.4em] text-[var(--ignis-ghost)] uppercase mb-6">/ BioCore MVP · Q3 2026</p>
             <h2 className="text-4xl md:text-7xl font-medium tracking-tight leading-[1.05] max-w-3xl mx-auto mb-10 text-[var(--ignis-text)] text-balance">

@@ -76,7 +76,7 @@ export default function IcesPage() {
           }}
         />
 
-        <div className="relative z-10 max-w-screen-2xl mx-auto w-full pt-40">
+        <div className="relative z-10 max-w-[1280px] mx-auto w-full pt-40">
           <motion.div style={{ opacity: subtitleOpacity, y: subtitleY }}>
             <div className="flex items-center gap-4 mb-8">
               <span className="font-mono text-[9px] tracking-[0.35em] text-cyan uppercase border border-cyan/30 px-3 py-1.5">
@@ -125,7 +125,7 @@ export default function IcesPage() {
 
       {/* ── STATS — WHITE ── */}
       <section className="py-20 px-8 md:px-16 bg-white border-t border-[#e5e5e5]">
-        <div className="max-w-screen-2xl mx-auto grid grid-cols-2 md:grid-cols-4">
+        <div className="max-w-[1280px] mx-auto grid grid-cols-2 md:grid-cols-4">
           {stats.map((s, i) => (
             <FadeIn
               key={s.tag}
@@ -142,7 +142,7 @@ export default function IcesPage() {
 
       {/* ── LE PROBLÈME — WHITE ── */}
       <section className="py-28 md:py-36 px-8 md:px-16 bg-white border-t border-[#e5e5e5]">
-        <div className="max-w-screen-2xl mx-auto grid md:grid-cols-2 gap-16">
+        <div className="max-w-[1280px] mx-auto grid md:grid-cols-2 gap-16">
           <FadeIn>
             <p className="font-mono text-[9px] tracking-[0.35em] text-cyan uppercase mb-4">/ Le problème</p>
             <h2 className="text-4xl md:text-5xl font-medium tracking-tight text-black mb-6">
@@ -174,7 +174,7 @@ export default function IcesPage() {
 
       {/* ── TROIS GARANTIES — BLACK ── */}
       <section id="doctrine" className="py-28 md:py-36 px-8 md:px-16 bg-black border-t border-white/5">
-        <div className="max-w-screen-2xl mx-auto">
+        <div className="max-w-[1280px] mx-auto">
           <FadeIn>
             <p className="font-mono text-[9px] tracking-[0.35em] text-white/30 uppercase mb-4">/ La doctrine</p>
             <h2 className="text-4xl md:text-5xl font-medium tracking-tight mb-6">
@@ -203,7 +203,7 @@ export default function IcesPage() {
 
       {/* ── COMMENT ÇA MARCHE — WHITE ── */}
       <section className="py-28 md:py-36 px-8 md:px-16 bg-white border-t border-[#e5e5e5]">
-        <div className="max-w-screen-2xl mx-auto">
+        <div className="max-w-[1280px] mx-auto">
           <FadeIn>
             <p className="font-mono text-[9px] tracking-[0.35em] text-cyan uppercase mb-4">/ En une image</p>
             <h2 className="text-4xl md:text-5xl font-medium tracking-tight text-black mb-14">
@@ -230,7 +230,7 @@ export default function IcesPage() {
 
       {/* ── MODÈLE — BLACK ── */}
       <section className="py-28 md:py-36 px-8 md:px-16 bg-black border-t border-white/5">
-        <div className="max-w-screen-2xl mx-auto grid md:grid-cols-2 gap-16 items-start">
+        <div className="max-w-[1280px] mx-auto grid md:grid-cols-2 gap-16 items-start">
           <FadeIn>
             <p className="font-mono text-[9px] tracking-[0.35em] text-white/30 uppercase mb-4">/ Modèle</p>
             <h2 className="text-4xl md:text-5xl font-medium tracking-tight mb-6">
@@ -265,7 +265,7 @@ export default function IcesPage() {
 
       {/* ── FEUILLE DE ROUTE — WHITE ── */}
       <section id="gouvernance" className="py-28 md:py-36 px-8 md:px-16 bg-white border-t border-[#e5e5e5]">
-        <div className="max-w-screen-2xl mx-auto">
+        <div className="max-w-[1280px] mx-auto">
           <FadeIn>
             <p className="font-mono text-[9px] tracking-[0.35em] text-cyan uppercase mb-4">/ Gouvernance</p>
             <h2 className="text-4xl md:text-5xl font-medium tracking-tight text-black mb-4">
@@ -293,7 +293,7 @@ export default function IcesPage() {
 
       {/* ── CTA BAILLEURS — BLACK ── */}
       <section id="bailleurs" className="py-40 px-8 md:px-16 bg-black border-t border-white/5 text-center">
-        <div className="max-w-screen-2xl mx-auto">
+        <div className="max-w-[1280px] mx-auto">
           <FadeIn>
             <p className="font-mono text-[9px] tracking-[0.4em] text-white/30 uppercase mb-6">
               / Bailleurs, régulateurs, bureaux de contrôle

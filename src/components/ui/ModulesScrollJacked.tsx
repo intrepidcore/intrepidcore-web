@@ -50,7 +50,7 @@ const MODULES = [
       { name: "ELU flexion — section BAEL91", pct: 100, dur: 1.6, delay: 0 },
       { name: "ELS déformation σ_s ≤ 2/3 fe", pct: 100, dur: 1.4, delay: 0.3 },
       { name: "Calcul armatures As_min / As", pct: 100, dur: 1.2, delay: 0.6 },
-      { name: "Signature HMAC-SHA256 note", pct: 100, dur: 0.6, delay: 0.9 },
+      { name: "Signature Ed25519 note", pct: 100, dur: 0.6, delay: 0.9 },
     ],
     result: "As=8.04cm² · 4HA16+4HA14 · Cadres HA8/20cm",
   },

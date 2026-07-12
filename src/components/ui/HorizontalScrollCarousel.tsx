@@ -40,7 +40,7 @@ export function HorizontalScrollCarousel({ items, title, subtitle }: HorizontalS
 
   return (
     <section className="relative bg-black text-white py-28 md:py-40 px-8 md:px-12 overflow-hidden">
-      <div className="max-w-screen-2xl mx-auto">
+      <div className="max-w-[1280px] mx-auto">
         {/* Header */}
         <div className="mb-16">
           {subtitle && (

@@ -24,7 +24,7 @@ const MODULES = [
       "✓ Hardy-Cross converge · 8 itérations",
       "✓ P_min = 2.1 bar · Q_res = 12.4 l/s",
       "✓ DN optimisé = 125 mm  [ EN 805 ]",
-      "✓ Note HMAC-SHA256 → rapport_AEP_001.pdf",
+      "✓ Note Ed25519 → rapport_AEP_001.pdf",
     ],
   },
   {
@@ -66,7 +66,7 @@ const MODULES = [
       "✓ Nu = 420 kN · Mu = 18 kN.m",
       "✓ As_calc = 8.04 cm²",
       "✓ → 4HA16 + 4HA14 · Cadres HA8/20cm",
-      "✓ Note HMAC-SHA256 → note_calcul_20260620.pdf",
+      "✓ Note Ed25519 → note_calcul_20260620.pdf",
     ],
   },
   {
