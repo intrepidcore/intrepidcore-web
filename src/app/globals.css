@@ -14,8 +14,8 @@
   --color-cyan: var(--brand-cyan);
   --color-atlas: var(--brand-atlas);
   --color-ignis: var(--brand-ignis);
-  --font-sans: var(--font-inter);
-  --font-mono: var(--font-dm-mono);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
 }
 
 body {

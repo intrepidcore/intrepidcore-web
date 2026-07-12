@@ -1,19 +1,9 @@
 import type { Metadata } from "next";
-import { Inter, DM_Mono } from "next/font/google";
+import { GeistSans } from "geist/font/sans";
+import { GeistMono } from "geist/font/mono";
 import "./globals.css";
 import { HamburgerNav } from "@/components/ui/HamburgerNav";
 import { LenisProvider } from "@/components/ui/LenisProvider";
-
-const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
-});
-
-const dmMono = DM_Mono({
-  weight: ["400", "500"],
-  variable: "--font-dm-mono",
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
   title: "intrepidcore | Système d'exploitation géotechnique et structurel",
@@ -29,7 +19,7 @@ export default function RootLayout({
   return (
     <html
       lang="fr"
-      className={`${inter.variable} ${dmMono.variable} h-full antialiased`}
+      className={`${GeistSans.variable} ${GeistMono.variable} h-full antialiased`}
       suppressHydrationWarning
     >
       <body
