@@ -1,0 +1,104 @@
+@import "tailwindcss";
+
+:root {
+  --background: #FFFFFF;
+  --foreground: #000000;
+  --brand-cyan: #00C4D4;
+  --brand-atlas: #40916C;
+  --brand-ignis: #E85D04;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-cyan: var(--brand-cyan);
+  --color-atlas: var(--brand-atlas);
+  --color-ignis: var(--brand-ignis);
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-dm-mono);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), sans-serif;
+}
+
+/* Utilities */
+@layer utilities {
+  .glass {
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+  }
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* ─── IgnisCore Adaptive Theme tokens ─────────────────────
+   Light mode = default. Dark tactical mode = prefers-color-scheme: dark.
+   Code terminals (--ignis-code-bg) stay black in both modes.
+──────────────────────────────────────────────────────────── */
+:root {
+  --ignis-bg:       #ffffff;
+  --ignis-bg-2:     #fafafa;
+  --ignis-bg-3:     #f5f5f5;
+  --ignis-code-bg:  #000000;
+  --ignis-border-1: #e5e5e5;
+  --ignis-border-2: #d4d4d4;
+  --ignis-text:     #0a0a0b;
+  --ignis-text-2:   #3f3f46;
+  --ignis-mid:      #52525b;
+  --ignis-mid-2:    #71717a;
+  --ignis-dim:      #a1a1aa;
+  --ignis-ghost:    #c8c8ca;
+  --ignis-accent:   #E85D04;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ignis-bg:       #0a0a0b;
+    --ignis-bg-2:     #0d0d0d;
+    --ignis-bg-3:     #111111;
+    --ignis-code-bg:  #000000;
+    --ignis-border-1: #1a1a1a;
+    --ignis-border-2: #27272A;
+    --ignis-text:     #f3f4f6;
+    --ignis-text-2:   #a1a1aa;
+    --ignis-mid:      #52525b;
+    --ignis-mid-2:    #71717a;
+    --ignis-dim:      #3f3f46;
+    --ignis-ghost:    #27272A;
+    --ignis-accent:   #E85D04;
+  }
+}
+
+/* Hide scrollbar for horizontal carousel */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Selection */
+::selection {
+  background: #000000;
+  color: #FFFFFF;
+}
+
+/* Let Lenis manage scroll behavior — override browser smooth-scroll */
+html {
+  scroll-behavior: auto;
+}
+
+/* Scroll snap — hero section only (proximity = doux, non bloquant) */
+.hero-snap-container {
+  scroll-snap-type: y proximity;
+}
+.hero-snap-target {
+  scroll-snap-align: start;
+}

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 56" width="200" height="56">
+  <g fill="none" stroke="#00C4D4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    
+    <path d="M22 8 C 30 18, 36 24, 36 32 a 14 14 0 0 1 -28 0 C 8 24, 14 18, 22 8 Z"></path>
+  </g>
+  <text x="48" y="36" font-family="Outfit, sans-serif" font-weight="700" font-size="22" fill="#11161C" letter-spacing="0.5">LCPI</text>
+  <text x="48" y="50" font-family="DM Mono, monospace" font-size="10" fill="#6B7785" letter-spacing="0.5">core hydraulics</text>
+</svg>
