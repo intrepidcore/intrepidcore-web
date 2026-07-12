@@ -109,6 +109,14 @@ export default function LCPIPage() {
         className="relative min-h-screen flex flex-col justify-end pb-24 px-8 md:px-16 bg-black overflow-hidden"
         style={{ scrollSnapAlign: "start" }}
       >
+        {/* Chaos -> Ordre — toile de fond du Dossier Double */}
+        <div className="absolute inset-0 opacity-[0.28]" style={{
+          backgroundImage: "url(/illustrations/lcpi/lcpi_abstract_chaos_ordre.jpg)",
+          backgroundSize: "cover",
+          backgroundPosition: "center 40%",
+        }} />
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-black/80" />
+
         {/* Blueprint grid */}
         <div className="absolute inset-0 opacity-[0.025]" style={{
           backgroundImage: "linear-gradient(#00C4D4 1px, transparent 1px), linear-gradient(90deg, #00C4D4 1px, transparent 1px)",
@@ -177,8 +185,14 @@ export default function LCPIPage() {
       </section>
 
       {/* ── SOLVEUR DOUBLE — SCHÉMA D'ARCHITECTURE — BLACK ── */}
-      <section className="py-28 md:py-36 px-8 md:px-16 bg-black border-t border-white/5">
-        <div className="max-w-[1280px] mx-auto">
+      <section className="relative py-28 md:py-36 px-8 md:px-16 bg-black border-t border-white/5 overflow-hidden">
+        <div className="absolute inset-0 opacity-[0.16]" style={{
+          backgroundImage: "url(/illustrations/lcpi/lcpi_abstract_stochastique_02.jpg)",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }} />
+        <div className="absolute inset-0 bg-black/50" />
+        <div className="relative max-w-[1280px] mx-auto">
           <FadeIn>
             <p className="font-mono text-[9px] tracking-[0.35em] text-white/30 uppercase mb-4">/ Architecture du Solveur</p>
             <h2 className="text-4xl md:text-5xl font-medium tracking-tight mb-4">Un noyau, deux logiques.<br /><span className="text-white/25">Jamais l&apos;une sans l&apos;autre.</span></h2>
@@ -200,8 +214,14 @@ export default function LCPIPage() {
       <ModulesStickyList />
 
       {/* ── PREUVES DE CALCUL — BLACK ── */}
-      <section className="py-28 md:py-36 px-8 md:px-16 bg-black border-t border-white/5">
-        <div className="max-w-[1280px] mx-auto">
+      <section className="relative py-28 md:py-36 px-8 md:px-16 bg-black border-t border-white/5 overflow-hidden">
+        <div className="absolute inset-0 opacity-[0.14]" style={{
+          backgroundImage: "url(/illustrations/lcpi/lcpi_abstract_stochastique_01.jpg)",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }} />
+        <div className="absolute inset-0 bg-black/55" />
+        <div className="relative max-w-[1280px] mx-auto">
           <FadeIn>
             <p className="font-mono text-[9px] tracking-[0.35em] text-white/30 uppercase mb-4">/ Preuves de Calcul</p>
             <h2 className="text-4xl md:text-5xl font-medium tracking-tight mb-8">Le mécanisme, pas la promesse.</h2>
@@ -421,8 +441,14 @@ export default function LCPIPage() {
       </section>
 
       {/* ── STANDARD ICES — BLACK ── */}
-      <section className="py-28 md:py-36 px-8 md:px-16 bg-black border-t border-white/5">
-        <div className="max-w-[1280px] mx-auto">
+      <section className="relative py-28 md:py-36 px-8 md:px-16 bg-black border-t border-white/5 overflow-hidden">
+        <div className="absolute inset-0 opacity-[0.18]" style={{
+          backgroundImage: "url(/illustrations/lcpi/lcpi_abstract_scellement.jpg)",
+          backgroundSize: "cover",
+          backgroundPosition: "center 30%",
+        }} />
+        <div className="absolute inset-0 bg-black/55" />
+        <div className="relative max-w-[1280px] mx-auto">
           <FadeIn>
             <p className="font-mono text-[9px] tracking-[0.35em] text-white/30 uppercase mb-4">/ Standard ICES</p>
             <h2 className="text-4xl md:text-5xl font-medium tracking-tight mb-14">Chaque calcul est signé.<br /><span className="text-white/25">Chaque norme est tracée.</span></h2>
@@ -514,8 +540,14 @@ export default function LCPIPage() {
       </section>
 
       {/* ── CTA — WHITE ── */}
-      <section id="demo" className="py-40 px-8 md:px-16 bg-white border-t border-[#e5e5e5] text-center">
-        <div className="max-w-[1280px] mx-auto">
+      <section id="demo" className="relative py-40 px-8 md:px-16 bg-white border-t border-[#e5e5e5] text-center overflow-hidden">
+        <div className="absolute inset-0 opacity-[0.20]" style={{
+          backgroundImage: "url(/illustrations/lcpi/lcpi_abstract_deterministe_01.jpg)",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }} />
+        <div className="absolute inset-0 bg-white/70" />
+        <div className="relative max-w-[1280px] mx-auto">
           <FadeIn>
             <p className="font-mono text-[9px] tracking-[0.4em] text-[#999] uppercase mb-6">/ Démarrer avec LCPI</p>
             <h2 className="text-4xl md:text-7xl font-medium tracking-tight leading-[1.05] max-w-3xl mx-auto mb-10 text-black text-balance">
