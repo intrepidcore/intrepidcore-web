@@ -16,10 +16,10 @@ const navColumns = [
   {
     title: "Standard",
     links: [
-      { label: "Standard ICES", href: "/#standards" },
-      { label: "Doctrines Opérationnelles", href: "/#doctrines" },
-      { label: "Auditabilité Totale", href: "/#standards" },
-      { label: "Rigueur Mathématique", href: "/#standards" },
+      { label: "Standard ICES", href: "/produits/ices" },
+      { label: "Trois garanties", href: "/produits/ices#doctrine" },
+      { label: "Gouvernance par phases", href: "/produits/ices#gouvernance" },
+      { label: "Livre blanc (PDF)", href: "/whitepapers/ICES-whitepaper-v3.pdf" },
     ],
   },
   {

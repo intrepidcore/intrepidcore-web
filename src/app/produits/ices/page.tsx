@@ -173,7 +173,7 @@ export default function IcesPage() {
       </section>
 
       {/* ── TROIS GARANTIES — BLACK ── */}
-      <section className="py-28 md:py-36 px-8 md:px-16 bg-black border-t border-white/5">
+      <section id="doctrine" className="py-28 md:py-36 px-8 md:px-16 bg-black border-t border-white/5">
         <div className="max-w-screen-2xl mx-auto">
           <FadeIn>
             <p className="font-mono text-[9px] tracking-[0.35em] text-white/30 uppercase mb-4">/ La doctrine</p>
@@ -264,7 +264,7 @@ export default function IcesPage() {
       </section>
 
       {/* ── FEUILLE DE ROUTE — WHITE ── */}
-      <section className="py-28 md:py-36 px-8 md:px-16 bg-white border-t border-[#e5e5e5]">
+      <section id="gouvernance" className="py-28 md:py-36 px-8 md:px-16 bg-white border-t border-[#e5e5e5]">
         <div className="max-w-screen-2xl mx-auto">
           <FadeIn>
             <p className="font-mono text-[9px] tracking-[0.35em] text-cyan uppercase mb-4">/ Gouvernance</p>
