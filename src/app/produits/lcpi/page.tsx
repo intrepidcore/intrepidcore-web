@@ -29,13 +29,13 @@ const modules = [
     tag: "/ 04", name: "Charpente Métallique EC3",
     desc: "Portiques industriels, charpentes légères, poutres composées. Flambement, déversement, résistance sections HEA/IPE/HEB.",
     specs: ["EC3", "HEA/IPE/HEB", "Flambement", "Déversement"],
-    status: "Beta", statusColor: "text-[#888]",
+    status: "Roadmap", statusColor: "text-[#444]",
   },
   {
     tag: "/ 05", name: "Construction Bois EC5",
     desc: "Charpentes, planchers, murs à ossature. Lamellé-collé, massif, CLT. Connexions mécaniques (boulons, pointes, connecteurs).",
     specs: ["EC5", "Lamellé-collé", "CLT", "Connexions"],
-    status: "Beta", statusColor: "text-[#888]",
+    status: "Roadmap", statusColor: "text-[#444]",
   },
   {
     tag: "/ 06", name: "Éléments Finis FEniCS",
@@ -46,35 +46,34 @@ const modules = [
 ];
 
 const comparison = [
-  { feature: "Prix d'entrée", lcpi: "Gratuit / 29 $/mois", epanet: "Gratuit (limité)", autocad: "2 000 $ /an", robot: "3 500 $ /an" },
+  { feature: "Prix d'entrée", lcpi: "Gratuit, puis 600 000 FCFA/an", epanet: "Gratuit (limité)", autocad: "≈ 1,2 M FCFA/an", robot: "≈ 2,1 M FCFA/an" },
   { feature: "Normes locales BAEL 91", lcpi: "✓ Natif", epanet: "—", autocad: "Partiel", robot: "Partiel" },
-  { feature: "Eurocodes 2/3/5", lcpi: "✓ Complet", epanet: "—", autocad: "✓", robot: "✓" },
+  { feature: "Eurocode 2 (béton armé)", lcpi: "✓ Complet", epanet: "—", autocad: "✓", robot: "✓" },
   { feature: "Optimisation NSGA-II", lcpi: "✓ Natif", epanet: "—", autocad: "—", robot: "—" },
   { feature: "Rapport signé Ed25519", lcpi: "✓ Systématique", epanet: "—", autocad: "—", robot: "—" },
-  { feature: "CLI scriptable / CI-CD", lcpi: "✓ Python Typer", epanet: "—", autocad: "—", robot: "—" },
   { feature: "Desktop offline", lcpi: "✓ Tauri v2", epanet: "✓", autocad: "✓", robot: "✓" },
-  { feature: "API REST intégrée", lcpi: "v2.5 (roadmap)", epanet: "—", autocad: "—", robot: "Partiel" },
+  { feature: "Assainissement SWMM (23 types d'objets)", lcpi: "✓ Natif", epanet: "—", autocad: "Partiel", robot: "—" },
 ];
 
 const pricingTiers = [
   {
-    name: "Free", price: "0 $", period: "", desc: "Pour découvrir",
-    features: ["3 modules (AEP, Béton, Hydro)", "5 projets / mois", "CLI uniquement"],
-    cta: "Télécharger CLI", accent: "border-[#e5e5e5]", ctaStyle: "border border-black/20 hover:border-black text-black",
+    name: "Starter", price: "0 FCFA", period: "", desc: "Pour évaluer et démarrer",
+    features: ["Les 3 modules métier", "Sceau ICES et vérification hors ligne", "Jusqu'à 50 nœuds AEP", "Un mois d'essai complet"],
+    cta: "Télécharger", accent: "border-[#e5e5e5]", ctaStyle: "border border-black/20 hover:border-black text-black",
   },
   {
-    name: "Standard", price: "29 $", period: "/ mois", desc: "Bureaux d'études",
-    features: ["6 modules (tous)", "Projets illimités", "PDF/DOCX/XLSX"],
-    cta: "Commencer", accent: "border-cyan", ctaStyle: "bg-cyan text-black hover:bg-cyan/90",
+    name: "Étudiant", price: "15 000 FCFA", period: "/ an", desc: "Génie civil et hydraulique",
+    features: ["Tout Starter, sans filigrane", "Jusqu'à 150 nœuds AEP", "Scénarios et optimisation NSGA-II", "Plans normatifs DXF et SVG"],
+    cta: "Vérifier mon statut", accent: "border-[#e5e5e5]", ctaStyle: "border border-black/20 hover:border-black text-black",
   },
   {
-    name: "Pro", price: "79 $", period: "/ mois", desc: "Cabinets & API",
-    features: ["Intégration Atlas & IgnisCore", "White-label PDF", "API REST (dès v2.5)"],
-    cta: "Demander une démo", accent: "border-[#e5e5e5]", ctaStyle: "border border-black/20 hover:border-black text-black",
+    name: "Pro", price: "600 000 FCFA", period: "/ an / poste", desc: "Bureaux d'études",
+    features: ["Modèles sans limite de taille", "Cahier de plans d'exécution", "Paper space normatif", "Support par courriel sous 5 j"],
+    cta: "Demander un essai", accent: "border-cyan", ctaStyle: "bg-cyan text-black hover:bg-cyan/90",
   },
   {
-    name: "Enterprise", price: "Sur devis", period: "", desc: "On-premise & institutions",
-    features: ["On-premise deployment", "Formation équipe", "Sur mesure"],
+    name: "Max", price: "900 000 FCFA", period: "/ an / poste", desc: "Équipes, 3 postes minimum",
+    features: ["Interopérabilité BIM, IFC et SAF", "Incertitude, Monte-Carlo, Pareto", "Circuit de revue multi-acteurs", "Chaîne de preuve APD vers As-Built"],
     cta: "Nous contacter", accent: "border-[#e5e5e5]", ctaStyle: "border border-black/20 hover:border-black text-black",
   },
 ];
@@ -171,7 +170,7 @@ export default function LCPIPage() {
           {[
             { val: "6", label: "Modules de calcul (3 en production)", tag: "/ COUVERTURE" },
             { val: "3", label: "Domaines d'ingénierie actifs", tag: "/ DOMAINES" },
-            { val: "10-50×", label: "Moins cher que l'alternative", tag: "/ ÉCONOMIE" },
+            { val: "10×", label: "Moins cher qu'une suite hydraulique complète", tag: "/ ÉCONOMIE" },
             { val: "100%", label: "Auditable Ed25519", tag: "/ STANDARD ICES" },
           ].map((s, i) => (
             <FadeIn key={s.tag} delay={i * 0.06} className={`py-8 md:py-0 px-0 md:px-10 ${i > 0 ? "border-t md:border-t-0 md:border-l border-[#e5e5e5]" : ""}`}>
@@ -534,6 +533,16 @@ export default function LCPIPage() {
               </FadeIn>
             ))}
           </div>
+          <FadeIn>
+            <div className="mt-px bg-black border-t-2 border-white/15 p-8 flex flex-col md:flex-row md:items-center gap-6 justify-between">
+              <div>
+                <p className="font-mono text-[9px] tracking-[0.3em] text-white/25 uppercase mb-3">Établissements d'enseignement</p>
+                <h3 className="text-xl font-medium text-white mb-2">Plan Écoles</h3>
+                <p className="text-sm text-white/40 max-w-[54ch]">Salle de travaux pratiques à 495 000 FCFA par an, campus entier à 1 500 000 FCFA, convention triennale. Contrepartie pédagogique inscrite au contrat : heures de TP à la maquette, référents formés, projets de fin d&apos;études.</p>
+              </div>
+              <a href="#demo" className="shrink-0 text-center py-3 px-8 font-mono text-[10px] tracking-[0.25em] uppercase border border-white/20 hover:border-white transition-colors">Nous écrire</a>
+            </div>
+          </FadeIn>
         </div>
       </section>
 
