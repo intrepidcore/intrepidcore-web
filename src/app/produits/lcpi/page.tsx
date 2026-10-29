@@ -46,7 +46,7 @@ const modules = [
 ];
 
 const comparison = [
-  { feature: "Prix d'entrée", lcpi: "Gratuit, puis 600 000 FCFA/an", epanet: "Gratuit (limité)", autocad: "≈ 1,2 M FCFA/an", robot: "≈ 2,1 M FCFA/an" },
+  { feature: "Prix d'entrée", lcpi: "Évaluation d'un mois, puis 600 000 FCFA/an", epanet: "Gratuit (limité)", autocad: "≈ 1,2 M FCFA/an", robot: "≈ 2,1 M FCFA/an" },
   { feature: "Normes locales BAEL 91", lcpi: "✓ Natif", epanet: "—", autocad: "Partiel", robot: "Partiel" },
   { feature: "Eurocode 2 (béton armé)", lcpi: "✓ Complet", epanet: "—", autocad: "✓", robot: "✓" },
   { feature: "Optimisation NSGA-II", lcpi: "✓ Natif", epanet: "—", autocad: "—", robot: "—" },
@@ -57,23 +57,23 @@ const comparison = [
 
 const pricingTiers = [
   {
-    name: "Starter", price: "0 FCFA", period: "", desc: "Pour évaluer et démarrer",
-    features: ["Les 3 modules métier", "Sceau ICES et vérification hors ligne", "Jusqu'à 50 nœuds AEP", "Un mois d'essai complet"],
+    name: "Évaluation", price: "0 FCFA", period: "/ 1 mois", desc: "Licence d'évaluation temporaire",
+    features: ["Les 3 modules métier", "Sceau ICES et vérification hors ligne", "Jusqu'à 50 nœuds AEP", "Durée bornée à un mois"],
     cta: "Télécharger", accent: "border-[#e5e5e5]", ctaStyle: "border border-black/20 hover:border-black text-black",
   },
   {
-    name: "Étudiant", price: "15 000 FCFA", period: "/ an", desc: "Génie civil et hydraulique",
-    features: ["Tout Starter, sans filigrane", "Jusqu'à 150 nœuds AEP", "Scénarios et optimisation NSGA-II", "Plans normatifs DXF et SVG"],
+    name: "Étudiant", price: "45 000 FCFA", period: "/ an", desc: "Génie civil et hydraulique",
+    features: ["Équivalent de 3 h de prestation (15 000 FCFA l'heure)", "Tout l'Évaluation, sans filigrane", "Jusqu'à 150 nœuds AEP", "Scénarios et optimisation NSGA-II", "Plans normatifs DXF et SVG"],
     cta: "Vérifier mon statut", accent: "border-[#e5e5e5]", ctaStyle: "border border-black/20 hover:border-black text-black",
   },
   {
     name: "Pro", price: "600 000 FCFA", period: "/ an / poste", desc: "Bureaux d'études",
-    features: ["Modèles sans limite de taille", "Cahier de plans d'exécution", "Paper space normatif", "Support par courriel sous 5 j"],
+    features: ["Équivalent de 40 h de prestation, une semaine", "Modèles sans limite de taille", "Cahier de plans d'exécution", "Paper space normatif", "Support par courriel sous 5 j"],
     cta: "Demander un essai", accent: "border-cyan", ctaStyle: "bg-cyan text-black hover:bg-cyan/90",
   },
   {
     name: "Max", price: "900 000 FCFA", period: "/ an / poste", desc: "Équipes, 3 postes minimum",
-    features: ["Interopérabilité BIM, IFC et SAF", "Incertitude, Monte-Carlo, Pareto", "Circuit de revue multi-acteurs", "Chaîne de preuve APD vers As-Built"],
+    features: ["Équivalent de 60 h de prestation par poste", "Interopérabilité BIM, IFC et SAF", "Incertitude, Monte-Carlo, Pareto", "Circuit de revue multi-acteurs", "Chaîne de preuve APD vers As-Built"],
     cta: "Nous contacter", accent: "border-[#e5e5e5]", ctaStyle: "border border-black/20 hover:border-black text-black",
   },
 ];
@@ -538,7 +538,7 @@ export default function LCPIPage() {
               <div>
                 <p className="font-mono text-[9px] tracking-[0.3em] text-white/25 uppercase mb-3">Établissements d'enseignement</p>
                 <h3 className="text-xl font-medium text-white mb-2">Plan Écoles</h3>
-                <p className="text-sm text-white/40 max-w-[54ch]">Salle de travaux pratiques à 495 000 FCFA par an, campus entier à 1 500 000 FCFA, convention triennale. Contrepartie pédagogique inscrite au contrat : heures de TP à la maquette, référents formés, projets de fin d&apos;études.</p>
+                <p className="text-sm text-white/40 max-w-[54ch]">Salle de travaux pratiques à 495 000 FCFA par an (33 h de prestation), campus entier à 1 500 000 FCFA (100 h), convention triennale. Contrepartie pédagogique inscrite au contrat : heures de TP à la maquette, référents formés, projets de fin d&apos;études.</p>
               </div>
               <a href="#demo" className="shrink-0 text-center py-3 px-8 font-mono text-[10px] tracking-[0.25em] uppercase border border-white/20 hover:border-white transition-colors">Nous écrire</a>
             </div>
