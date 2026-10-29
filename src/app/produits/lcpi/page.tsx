@@ -46,7 +46,7 @@ const modules = [
 ];
 
 const comparison = [
-  { feature: "Prix d'entrée", lcpi: "Évaluation d'un mois, puis 600 000 FCFA/an", epanet: "Gratuit (limité)", autocad: "≈ 1,2 M FCFA/an", robot: "≈ 2,1 M FCFA/an" },
+  { feature: "Prix d'entrée", lcpi: "Évaluation d'un mois, puis 50 000 FCFA/mois", epanet: "Gratuit (limité)", autocad: "≈ 100 000 FCFA/mois", robot: "≈ 175 000 FCFA/mois" },
   { feature: "Normes locales BAEL 91", lcpi: "✓ Natif", epanet: "—", autocad: "Partiel", robot: "Partiel" },
   { feature: "Eurocode 2 (béton armé)", lcpi: "✓ Complet", epanet: "—", autocad: "✓", robot: "✓" },
   { feature: "Optimisation NSGA-II", lcpi: "✓ Natif", epanet: "—", autocad: "—", robot: "—" },
@@ -57,23 +57,23 @@ const comparison = [
 
 const pricingTiers = [
   {
-    name: "Évaluation", price: "0 FCFA", period: "/ 1 mois", desc: "Licence d'évaluation temporaire",
+    name: "Évaluation", price: "0 FCFA", period: "/ 1 mois", annual: "Licence temporaire, sans engagement", desc: "Licence d'évaluation temporaire",
     features: ["Les 3 modules métier", "Sceau ICES et vérification hors ligne", "Jusqu'à 50 nœuds AEP", "Durée bornée à un mois"],
     cta: "Télécharger", accent: "border-[#e5e5e5]", ctaStyle: "border border-black/20 hover:border-black text-black",
   },
   {
-    name: "Étudiant", price: "45 000 FCFA", period: "/ an", desc: "Génie civil et hydraulique",
-    features: ["Équivalent de 3 h de prestation (15 000 FCFA l'heure)", "Tout l'Évaluation, sans filigrane", "Jusqu'à 150 nœuds AEP", "Scénarios et optimisation NSGA-II", "Plans normatifs DXF et SVG"],
+    name: "Étudiant", price: "3 750 FCFA", period: "/ mois", annual: "soit 45 000 FCFA par an", desc: "Génie civil et hydraulique",
+    features: ["Une année équivaut à 3 h de prestation (15 000 FCFA l'heure)", "Tout l'Évaluation, sans filigrane", "Jusqu'à 150 nœuds AEP", "Scénarios et optimisation NSGA-II", "Plans normatifs DXF et SVG"],
     cta: "Vérifier mon statut", accent: "border-[#e5e5e5]", ctaStyle: "border border-black/20 hover:border-black text-black",
   },
   {
-    name: "Pro", price: "600 000 FCFA", period: "/ an / poste", desc: "Bureaux d'études",
-    features: ["Équivalent de 40 h de prestation, une semaine", "Modèles sans limite de taille", "Cahier de plans d'exécution", "Paper space normatif", "Support par courriel sous 5 j"],
+    name: "Pro", price: "50 000 FCFA", period: "/ mois / poste", annual: "soit 600 000 FCFA par an et par poste", desc: "Bureaux d'études",
+    features: ["Une année équivaut à 40 h de prestation, une semaine", "Modèles sans limite de taille", "Cahier de plans d'exécution", "Paper space normatif", "Support par courriel sous 5 j"],
     cta: "Demander un essai", accent: "border-cyan", ctaStyle: "bg-cyan text-black hover:bg-cyan/90",
   },
   {
-    name: "Max", price: "900 000 FCFA", period: "/ an / poste", desc: "Équipes, 3 postes minimum",
-    features: ["Équivalent de 60 h de prestation par poste", "Interopérabilité BIM, IFC et SAF", "Incertitude, Monte-Carlo, Pareto", "Circuit de revue multi-acteurs", "Chaîne de preuve APD vers As-Built"],
+    name: "Max", price: "75 000 FCFA", period: "/ mois / poste", annual: "soit 900 000 FCFA par an et par poste", desc: "Équipes, 3 postes minimum",
+    features: ["Une année équivaut à 60 h de prestation par poste", "Interopérabilité BIM, IFC et SAF", "Incertitude, Monte-Carlo, Pareto", "Circuit de revue multi-acteurs", "Chaîne de preuve APD vers As-Built"],
     cta: "Nous contacter", accent: "border-[#e5e5e5]", ctaStyle: "border border-black/20 hover:border-black text-black",
   },
 ];
@@ -520,6 +520,7 @@ export default function LCPIPage() {
                       <span className="text-3xl font-medium text-white">{tier.price}</span>
                       <span className="text-sm text-white/30">{tier.period}</span>
                     </div>
+                    <p className="mt-2 text-xs text-white/40">{tier.annual}</p>
                   </div>
                   <ul className="space-y-3 mb-8 flex-1">
                     {tier.features.map((f) => (
@@ -538,7 +539,7 @@ export default function LCPIPage() {
               <div>
                 <p className="font-mono text-[9px] tracking-[0.3em] text-white/25 uppercase mb-3">Établissements d'enseignement</p>
                 <h3 className="text-xl font-medium text-white mb-2">Plan Écoles</h3>
-                <p className="text-sm text-white/40 max-w-[54ch]">Salle de travaux pratiques à 495 000 FCFA par an (33 h de prestation), campus entier à 1 500 000 FCFA (100 h), convention triennale. Contrepartie pédagogique inscrite au contrat : heures de TP à la maquette, référents formés, projets de fin d&apos;études.</p>
+                <p className="text-sm text-white/40 max-w-[54ch]">Salle de travaux pratiques à 41 250 FCFA par mois, soit 495 000 FCFA par an (33 h de prestation) ; campus entier à 125 000 FCFA par mois, soit 1 500 000 FCFA par an (100 h) ; convention triennale. Contrepartie pédagogique inscrite au contrat : heures de TP à la maquette, référents formés, projets de fin d&apos;études.</p>
               </div>
               <a href="#demo" className="shrink-0 text-center py-3 px-8 font-mono text-[10px] tracking-[0.25em] uppercase border border-white/20 hover:border-white transition-colors">Nous écrire</a>
             </div>
