@@ -41,10 +41,10 @@ const stats = [
   { val: "0 FCFA", label: "Coût du sceau — gratuit par doctrine", tag: "/ MODÈLE" },
   { val: "3", label: "Garanties, explicitement bornées", tag: "/ DOCTRINE" },
   { val: "6", label: "Phases de gouvernance cédée", tag: "/ FEUILLE DE ROUTE" },
-  { val: "30 p.", label: "Spécification technique complète", tag: "/ LIVRE BLANC v3.0" },
+  { val: "41 p.", label: "Spécification technique complète", tag: "/ LIVRE BLANC v4.0" },
 ];
 
-const PDF_HREF = "/whitepapers/ICES-whitepaper-v3.pdf";
+const PDF_HREF = "/whitepapers/ICES-whitepaper-v4.pdf";
 
 export default function IcesPage() {
   const heroRef = useRef<HTMLElement>(null);
@@ -80,7 +80,7 @@ export default function IcesPage() {
           <motion.div style={{ opacity: subtitleOpacity, y: subtitleY }}>
             <div className="flex items-center gap-4 mb-8">
               <span className="font-mono text-[9px] tracking-[0.35em] text-cyan uppercase border border-cyan/30 px-3 py-1.5">
-                v3.0 · Standard ouvert
+                v4.0 · Standard ouvert
               </span>
               <span className="font-mono text-[9px] tracking-[0.35em] text-white/30 uppercase">/ Ingénierie publique</span>
             </div>
