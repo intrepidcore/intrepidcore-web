@@ -29,7 +29,7 @@ const guarantees = [
 ];
 
 const phases = [
-  { n: "0", name: "Standard bien public", desc: "Spécification, vecteurs de test et implémentation de référence publiés sous licence ouverte." },
+  { n: "0", name: "Standard bien public", desc: "Spécification, vecteurs de test et vérificateur de référence (Python et Rust, en ligne de commande, sans interface graphique) publiés sous licence ouverte dans une première version bornée : github.com/intrepidcore/intrepidcore-ices." },
   { n: "1", name: "Ingénierie conventionnelle", desc: "ICES scelle des calculs déterministes normatifs, indépendamment de la validation du moteur stochastique." },
   { n: "2", name: "Attribution", desc: "Clés à durée de vie courte, horodatage en deux paliers, révocation asynchrone." },
   { n: "3", name: "Responsabilité & confiance publique", desc: "Chaîne de garde, co-signature du Bureau de Contrôle Technique, transfert du registre vers une autorité publique." },
@@ -239,8 +239,8 @@ export default function IcesPage() {
             <p className="text-base text-white/40 max-w-lg leading-relaxed">
               Un standard dont la vérification serait payante cesserait d&apos;être un standard de confiance
               neutre. ICES reste gratuit à produire et à vérifier, y compris avec l&apos;implémentation de
-              référence publiée en Phase&nbsp;0 — un bureau d&apos;études l&apos;utilise sans acheter aucune
-              licence commerciale.
+              référence publiée en Phase&nbsp;0, dans une première version bornée — un bureau d&apos;études
+              l&apos;utilise sans acheter aucune licence commerciale.
             </p>
           </FadeIn>
           <FadeIn delay={0.1}>
